@@ -1,12 +1,10 @@
 using System;
-using NaughtyAttributes;
 using UnityEngine;
 
 public class SeaTimer : MonoBehaviour
 {
     #region Fields
-    [SerializeField, Label("Game Length (in seconds)"), Tooltip("In seconds")] private float _gameLength;
-    private float _seaTimer; 
+    private float _seaTimer = 30; 
     #endregion
 
     #region Actions
@@ -14,13 +12,21 @@ public class SeaTimer : MonoBehaviour
     public event Action SeaTimerElapsed; 
 
     #endregion
-    
-    private void Awake()
+
+    #region Init
+
+    public void InitTimer(float seaGameLength)
     {
-        _seaTimer = _gameLength;
+        if (seaGameLength > 0)
+        {
+            _seaTimer = seaGameLength;
+        }
     }
 
-    // Update is called once per frame
+    #endregion
+    
+    #region Unity Lifecycle
+
     void Update()
     {
         _seaTimer -= Time.deltaTime;
@@ -30,4 +36,8 @@ public class SeaTimer : MonoBehaviour
             SeaTimerElapsed?.Invoke();
         }
     }
+
+    #endregion
+    
+    
 }
