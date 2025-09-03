@@ -12,6 +12,8 @@ public class BoatControllerAbsolute : MonoBehaviour
     private Vector2 _inputVector;
     private Vector2 _currentVelocity;
 
+    public bool IsActive { get; set; }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -22,6 +24,9 @@ public class BoatControllerAbsolute : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!IsActive)
+            return;
+
         _currentVelocity += (Vector2)transform.up * (_moveSpeed * Time.fixedDeltaTime);
 
         if (_currentVelocity.magnitude > _maxSpeed)
