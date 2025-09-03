@@ -8,10 +8,11 @@ public class BoatControllerAbsolute : MonoBehaviour
     [SerializeField] private float _turnSpeed;
     [SerializeField] private float _maxSpeed;
 
-    private bool _isActive;
     private Rigidbody2D _rb;
     private Vector2 _inputVector;
     private Vector2 _currentVelocity;
+
+    public bool IsActive { get; set; }
 
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class BoatControllerAbsolute : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_isActive)
+        if (!IsActive)
             return;
 
         _currentVelocity += (Vector2)transform.up * (_moveSpeed * Time.fixedDeltaTime);
@@ -44,16 +45,5 @@ public class BoatControllerAbsolute : MonoBehaviour
     private void OnInputEvent(InputAction.CallbackContext ctx)
     {
         _inputVector = ctx.ReadValue<Vector2>();
-    }
-
-    public void StartBoat()
-    {
-        _isActive = true;
-    }
-
-    public void StopBoat()
-    {
-        _isActive = false;
-        _currentVelocity = Vector2.zero;
     }
 }
