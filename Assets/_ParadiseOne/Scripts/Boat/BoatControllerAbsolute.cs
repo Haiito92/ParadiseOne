@@ -5,8 +5,7 @@ using UnityEngine.InputSystem;
 public class BoatControllerAbsolute : MonoBehaviour
 {
     [SerializeField] private InputActionReference _input;
-    [SerializeField] private float _moveSpeed;
-    [SerializeField] private float _turnSpeed;
+    [SerializeField] private float _acceleration;
 
     private Rigidbody2D _rb;
     private Vector2 _inputVector;
@@ -14,6 +13,7 @@ public class BoatControllerAbsolute : MonoBehaviour
 
     public bool IsActive { get; set; }
     public float MaxSpeed;
+    public float TurnSpeed;
 
     private void Awake()
     {
@@ -34,7 +34,7 @@ public class BoatControllerAbsolute : MonoBehaviour
         if (!IsActive)
             return;
 
-        _currentVelocity += (Vector2)transform.up * (_moveSpeed * Time.fixedDeltaTime);
+        _currentVelocity += (Vector2)transform.up * (_acceleration * Time.fixedDeltaTime);
 
         if (_currentVelocity.magnitude > MaxSpeed)
             _currentVelocity = _currentVelocity.normalized * MaxSpeed;
@@ -44,7 +44,7 @@ public class BoatControllerAbsolute : MonoBehaviour
         if (_inputVector.sqrMagnitude > 0.01f)
         {
             float targetAngle = Mathf.Atan2(_inputVector.y, _inputVector.x) * Mathf.Rad2Deg - 90f;
-            float newAngle = Mathf.MoveTowardsAngle(_rb.rotation, targetAngle, _turnSpeed * Time.fixedDeltaTime);
+            float newAngle = Mathf.MoveTowardsAngle(_rb.rotation, targetAngle, TurnSpeed * Time.fixedDeltaTime);
             _rb.MoveRotation(newAngle);
         }
     }
