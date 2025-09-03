@@ -167,3 +167,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Score>k__BackingField: 10
   _rigidbody: {fileID: 100237703918382323}
+  _speed: 50
