@@ -4,12 +4,13 @@ using UnityEngine.InputSystem;
 public class BoatControllerAbsolute : MonoBehaviour
 {
     [SerializeField] private InputActionReference _input;
-    [SerializeField] private float _moveForce;
-    [SerializeField] private float _maxSpeed;
+    [SerializeField] private float _moveSpeed;
     [SerializeField] private float _turnSpeed;
+    [SerializeField] private float _maxSpeed;
 
     private Rigidbody2D _rb;
     private Vector2 _inputVector;
+    private Vector2 _currentVelocity;
 
     private void Awake()
     {
@@ -21,15 +22,18 @@ public class BoatControllerAbsolute : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb.AddForce(transform.up * _moveForce);
+        _currentVelocity += (Vector2)transform.up * (_moveSpeed * Time.fixedDeltaTime);
 
-        if (_rb.linearVelocity.magnitude > _maxSpeed)
-            _rb.linearVelocity = _rb.linearVelocity.normalized * _maxSpeed;
+        if (_currentVelocity.magnitude > _maxSpeed)
+            _currentVelocity = _currentVelocity.normalized * _maxSpeed;
+
+        _rb.MovePosition(_rb.position + _currentVelocity * Time.fixedDeltaTime);
 
         if (_inputVector.sqrMagnitude > 0.01f)
         {
             float targetAngle = Mathf.Atan2(_inputVector.y, _inputVector.x) * Mathf.Rad2Deg - 90f;
-            _rb.rotation = Mathf.MoveTowardsAngle(_rb.rotation, targetAngle, _turnSpeed * Time.fixedDeltaTime);
+            float newAngle = Mathf.MoveTowardsAngle(_rb.rotation, targetAngle, _turnSpeed * Time.fixedDeltaTime);
+            _rb.MoveRotation(newAngle);
         }
     }
 
