@@ -17,7 +17,7 @@ public class SeaFishSpawner : MonoBehaviour
     [SerializeField] private float _spawningInterval = 5;
     [SerializeField] private int _maxNumberOfFish;
 
-    [SerializeField] private GameObject _oursinPrefab;
+    [SerializeField] private List<GameObject> _fishesPrefab;
     #endregion
 
     #region Actions
@@ -75,9 +75,6 @@ public class SeaFishSpawner : MonoBehaviour
     #endregion
 
     #region SpawnManagement
-
-    
-
     private void SpawnFish()
     {
         if(_fishes.Count >= _maxNumberOfFish) return;
@@ -97,7 +94,9 @@ public class SeaFishSpawner : MonoBehaviour
         
         //Spawn Fish (first with prefab)
 
-        GameObject fishGO = GameObject.Instantiate(_oursinPrefab, spawningPosition, this.gameObject.transform.rotation, this.transform);
+        GameObject prefabToSpawn = _fishesPrefab[Random.Range(0, _fishesPrefab.Count)];
+        
+        GameObject fishGO = GameObject.Instantiate(prefabToSpawn, spawningPosition, Quaternion.Euler(0,0, Random.Range(0f, 360f)), this.transform);
         Fish fish = fishGO.GetComponent<Fish>();
 
         if (fish == null)
@@ -106,6 +105,8 @@ public class SeaFishSpawner : MonoBehaviour
         }
 
         AddFish(fish);
+        
+        fish.StartFishLife();
     }
 
     private void AddFish(Fish fish)

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 100237703918382323}
   - component: {fileID: 2327180051137370064}
   - component: {fileID: 5551942868219577240}
-  - component: {fileID: 1088194330971522128}
   m_Layer: 7
   m_Name: Vivano
   m_TagString: Untagged
@@ -33,7 +32,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 2.133, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6536104641322861595}
+  - {fileID: 5092100202645732796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7105458704583363150
@@ -166,18 +167,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088a6b5b4fe2b9641a04a81b7a7d5adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fishLifeTimer: {fileID: 1633744043433150990}
   <Score>k__BackingField: 10
+  _fishLifeTime: 8
   _rigidbody: {fileID: 100237703918382323}
-  _changeDirectionTimer: {fileID: 1088194330971522128}
+  _changeDirectionTimer: {fileID: 707603908197535768}
   _speed: 40
   _changeDirectionTime: 1
---- !u!114 &1088194330971522128
+--- !u!1 &2984209391028989089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5092100202645732796}
+  - component: {fileID: 707603908197535768}
+  m_Layer: 7
+  m_Name: ChangeTimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5092100202645732796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2984209391028989089}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 848326408726609114}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &707603908197535768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645549082830898178}
+  m_GameObject: {fileID: 2984209391028989089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d383c7e135e9541a53ffa144faa2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7853296313457950970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6536104641322861595}
+  - component: {fileID: 1633744043433150990}
+  m_Layer: 7
+  m_Name: LifeTimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6536104641322861595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853296313457950970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 848326408726609114}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1633744043433150990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853296313457950970}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8d383c7e135e9541a53ffa144faa2bf, type: 3}

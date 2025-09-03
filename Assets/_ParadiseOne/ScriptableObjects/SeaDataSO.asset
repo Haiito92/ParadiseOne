@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa10337172d91114c862ab684be6530f, type: 3}
   m_Name: SeaDataSO
   m_EditorClassIdentifier: 
-  SeaGameLength: 10
+  SeaGameLength: 120
