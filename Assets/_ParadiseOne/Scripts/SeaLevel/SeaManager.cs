@@ -1,6 +1,6 @@
 using System;
+using NaughtyAttributes;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class SeaManager : MonoBehaviour
 {
@@ -15,15 +15,15 @@ public class SeaManager : MonoBehaviour
     #endregion
 
     #region Actions
-
     public event Action SeaGameStarted;
     public event Action SeaGameEnded;
-
     #endregion
     
     private void Awake()
     {
         SeaTimer.InitTimer(_seaData.SeaGameLength);
+        
+        _seaFishSpawner.InitSeaFishSpawner();
     }
 
     private void Start()
@@ -40,10 +40,12 @@ public class SeaManager : MonoBehaviour
         SeaScores.ResetScores();
         SeaGameStarted?.Invoke();
         SeaTimer.StartTimer();
+        _seaFishSpawner.StartSpawner();
     }
 
     private void EndSeaGame()
     {
+        _seaFishSpawner.StopSpawner();
         SeaGameEnded?.Invoke();
     }
     #endregion
@@ -62,5 +64,11 @@ public class SeaManager : MonoBehaviour
     {
         SeaScores.AddScore(collector, scoreToAdd);
     }
+    #endregion
+
+    //TODO REMOVE THIS SECTION
+    #region Test Functions
+    [Button]
+    public void TestStartSeaGame() => StartSeaGame();
     #endregion
 }
