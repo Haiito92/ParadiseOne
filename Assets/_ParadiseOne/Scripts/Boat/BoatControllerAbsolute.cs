@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +13,8 @@ public class BoatControllerAbsolute : MonoBehaviour
     private Vector2 _inputVector;
     private Vector2 _currentVelocity;
 
+    public bool IsActive { get; set; }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -22,6 +25,9 @@ public class BoatControllerAbsolute : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!IsActive)
+            return;
+
         _currentVelocity += (Vector2)transform.up * (_moveSpeed * Time.fixedDeltaTime);
 
         if (_currentVelocity.magnitude > _maxSpeed)
@@ -40,5 +46,19 @@ public class BoatControllerAbsolute : MonoBehaviour
     private void OnInputEvent(InputAction.CallbackContext ctx)
     {
         _inputVector = ctx.ReadValue<Vector2>();
+    }
+
+    //// FOR TESTS PURPOSES ONLY. DO NOT CALL THOSE FUNCTIONS FROM OTHER SCRIPTS OR EVEN IN THIS ONE. ////
+
+    [Button]
+    public void StartBoat()
+    {
+        IsActive = true;
+    }
+
+    [Button]
+    public void StopBoat()
+    {
+        IsActive = false;
     }
 }

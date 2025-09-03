@@ -209,8 +209,8 @@ GameObject:
   - component: {fileID: 3010362120292210655}
   - component: {fileID: 6576295895738444782}
   - component: {fileID: 1755517182884562385}
-  - component: {fileID: 2534278995262681014}
   - component: {fileID: 1810651257271202673}
+  - component: {fileID: 4184059779790598403}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -316,22 +316,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2534278995262681014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739101670081082598}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5687158c8a66e240804c147f5dce028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _input: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  _moveForce: 20
-  _maxSpeed: 3
-  _turnSpeed: 120
 --- !u!114 &1810651257271202673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +332,24 @@ MonoBehaviour:
   _moveSpeed: 4
   _turnSpeed: 120
   _maxSpeed: 3
+  IsActive: 1
+--- !u!114 &4184059779790598403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739101670081082598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71014dce20115154da5098c6e6fa55d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minX: -5
+  _maxX: 5
+  _minY: -5
+  _maxY: 5
+  wrapTowardsCenter: 0.1
 --- !u!1 &4702944397914306394
 GameObject:
   m_ObjectHideFlags: 0
