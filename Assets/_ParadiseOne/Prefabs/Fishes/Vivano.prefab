@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 100237703918382323}
   - component: {fileID: 2327180051137370064}
   - component: {fileID: 5551942868219577240}
+  - component: {fileID: 1088194330971522128}
   m_Layer: 7
   m_Name: Vivano
   m_TagString: Untagged
@@ -167,4 +168,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Score>k__BackingField: 10
   _rigidbody: {fileID: 100237703918382323}
-  _speed: 50
+  _changeDirectionTimer: {fileID: 1088194330971522128}
+  _speed: 40
+  _changeDirectionTime: 1
+--- !u!114 &1088194330971522128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645549082830898178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d383c7e135e9541a53ffa144faa2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
