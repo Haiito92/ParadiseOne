@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Fish : MonoBehaviour, IFish
+public abstract class Fish : MonoBehaviour, IFish
 {
     #region Properties
     [field: SerializeField] public int Score { get; private set; } = 10;
@@ -11,7 +11,7 @@ public class Fish : MonoBehaviour, IFish
     public event Action<PlayerEnum,int> FishCollected;
     #endregion
     
-    public void CollectFish(PlayerEnum collector)
+    public virtual void CollectFish(PlayerEnum collector)
     {
         FishCollected?.Invoke(collector, Score);
     }
