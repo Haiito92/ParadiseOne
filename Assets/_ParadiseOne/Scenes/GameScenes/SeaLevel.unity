@@ -550,9 +550,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3618297182190110193, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: _seaManager
+      value: 
+      objectReference: {fileID: 3642295889181157953}
+    - target: {fileID: 4193353442842030039, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6938333992072695774, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_Name
       value: SeaLevelCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638209575893002147, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -616,6 +628,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc01da86bf3ce6d40b950c938764ec1a, type: 3}
+--- !u!114 &3642295889181157953 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 831318430739227416, guid: fc01da86bf3ce6d40b950c938764ec1a, type: 3}
+  m_PrefabInstance: {fileID: 3642295889181157952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966ed5404d559d74c93a7f53ddebfcbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

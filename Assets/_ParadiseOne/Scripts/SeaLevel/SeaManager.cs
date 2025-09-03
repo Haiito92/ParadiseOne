@@ -1,13 +1,19 @@
 using System;
 using UnityEngine;
 
-public class SeaLevelManager : MonoBehaviour
+public class SeaManager : MonoBehaviour
 {
     #region Fields
     [SerializeField] private SeaDataSO _seaData;
     [SerializeField] private SeaTimer _seaTimer;
     #endregion
 
+    #region Actions
+
+    public event Action SeaGameEnded;
+
+    #endregion
+    
     private void Awake()
     {
         _seaTimer.InitTimer(_seaData.SeaGameLength);
@@ -22,7 +28,7 @@ public class SeaLevelManager : MonoBehaviour
 
     private void OnSeaTimerElapsed()
     {
-        GameManager.Instance.LoadScene(0); // 0 is the index of the MainMenu scene in the the build scene list
+        SeaGameEnded?.Invoke();
     }
 
     #endregion
