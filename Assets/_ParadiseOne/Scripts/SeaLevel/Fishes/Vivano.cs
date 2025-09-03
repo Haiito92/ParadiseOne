@@ -12,17 +12,6 @@ public class Vivano : Fish
     [SerializeField, Tooltip("In seconds")] private float _changeDirectionTime;
     private Vector2 _swimmingDirection;
 
-
-    private void Start()
-    {
-        SetRandomDirection();
-        
-        _changeDirectionTimer.InitTimer(_changeDirectionTime, true);
-        _changeDirectionTimer.SeaTimerElapsed += OnChangeDirectionTimerElapsed;
-        
-        _changeDirectionTimer.StartTimer();
-    }
-
     private void SetRandomDirection()
     {
         float randomX = Random.Range(-1, 1f);
@@ -51,6 +40,19 @@ public class Vivano : Fish
         //Debug.Log("Collected Vivano");
         base.CollectFish(collector);
     }
+
+    public override void StartFishLife()
+    {
+        base.StartFishLife();
+        
+        SetRandomDirection();
+        
+        _changeDirectionTimer.InitTimer(_changeDirectionTime, true);
+        _changeDirectionTimer.SeaTimerElapsed += OnChangeDirectionTimerElapsed;
+        
+        _changeDirectionTimer.StartTimer();
+    }
+
     #endregion
     
 }

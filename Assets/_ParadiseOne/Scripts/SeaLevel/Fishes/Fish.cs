@@ -26,7 +26,7 @@ public abstract class Fish : MonoBehaviour, IFish
         KillFish();
     }
 
-    public void StartFishLife()
+    public virtual void StartFishLife()
     {
         _fishLifeTimer.InitTimer(_fishLifeTime);
         _fishLifeTimer.SeaTimerElapsed += OnFishLifeTimerElapsed;

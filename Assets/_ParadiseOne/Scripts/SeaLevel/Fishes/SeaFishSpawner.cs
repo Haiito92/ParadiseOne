@@ -82,7 +82,7 @@ public class SeaFishSpawner : MonoBehaviour
     {
         if(_fishes.Count >= _maxNumberOfFish) return;
         
-        Debug.LogWarning("SpawnFish");
+        //Debug.LogWarning("SpawnFish");
         
         //Find random point on map
         float minX = _spawningZone.center.x - _spawningZone.size.x / 2;
