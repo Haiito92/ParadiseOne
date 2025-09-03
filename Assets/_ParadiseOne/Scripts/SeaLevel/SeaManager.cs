@@ -6,12 +6,12 @@ public class SeaManager : MonoBehaviour
 {
     #region Fields
     [SerializeField] private SeaDataSO _seaData;
-    [SerializeField] private SeaTimer _seaTimer;
     [SerializeField] private SeaFishSpawner _seaFishSpawner;
     #endregion
 
     #region Properties
     [field:SerializeField] public SeaScores SeaScores { get; private set; }
+    [field:SerializeField] public SeaTimer SeaTimer { get; private set; }
     #endregion
 
     #region Actions
@@ -23,12 +23,12 @@ public class SeaManager : MonoBehaviour
     
     private void Awake()
     {
-        _seaTimer.InitTimer(_seaData.SeaGameLength);
+        SeaTimer.InitTimer(_seaData.SeaGameLength);
     }
 
     private void Start()
     {
-        _seaTimer.SeaTimerElapsed += OnSeaTimerElapsed;
+        SeaTimer.SeaTimerElapsed += OnSeaTimerElapsed;
         _seaFishSpawner.SpawnedFishCollected += OnSeaFishCollected;
     }
 
@@ -39,7 +39,7 @@ public class SeaManager : MonoBehaviour
     {
         SeaScores.ResetScores();
         SeaGameStarted?.Invoke();
-        _seaTimer.StartTimer();
+        SeaTimer.StartTimer();
     }
 
     private void EndSeaGame()

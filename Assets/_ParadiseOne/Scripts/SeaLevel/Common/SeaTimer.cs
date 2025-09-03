@@ -1,5 +1,6 @@
 using System;
 using TMPro.Examples;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class SeaTimer : MonoBehaviour
@@ -14,6 +15,7 @@ public class SeaTimer : MonoBehaviour
 
     #region Actions
 
+    public event Action<float> SeaTimerTicked;
     public event Action SeaTimerElapsed; 
 
     #endregion
@@ -45,7 +47,8 @@ public class SeaTimer : MonoBehaviour
     {
         if(_seaTimerOn == false) return;
         
-        _seaTimer -= deltaTime;
+        _seaTimer = Math.Max(_seaTimer - deltaTime, 0f);
+        SeaTimerTicked?.Invoke(_seaTimer);
 
         if (_seaTimer <= 0)
         {
