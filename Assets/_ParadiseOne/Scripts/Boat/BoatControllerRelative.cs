@@ -11,6 +11,8 @@ public class BoatControllerRelative : MonoBehaviour
     private Rigidbody2D _rb;
     private float _inputDirection;
 
+    public bool IsActive { get; set; }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -21,6 +23,9 @@ public class BoatControllerRelative : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!IsActive)
+            return;
+
         _rb.AddForce(transform.up * _moveForce);
 
         if (_rb.linearVelocity.magnitude > _maxSpeed)
