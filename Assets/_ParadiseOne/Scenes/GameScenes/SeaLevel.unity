@@ -554,18 +554,14 @@ PrefabInstance:
       propertyPath: _seaManager
       value: 
       objectReference: {fileID: 3642295889181157953}
-    - target: {fileID: 4193353442842030039, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6938333992072695774, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_Name
       value: SeaLevelCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7638209575893002147, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 7059850643202806053, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3642295889181157953}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

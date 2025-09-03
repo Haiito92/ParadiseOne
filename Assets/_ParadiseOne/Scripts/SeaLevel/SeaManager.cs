@@ -10,6 +10,7 @@ public class SeaManager : MonoBehaviour
 
     #region Actions
 
+    public event Action SeaGameStarted;
     public event Action SeaGameEnded;
 
     #endregion
@@ -24,11 +25,26 @@ public class SeaManager : MonoBehaviour
         _seaTimer.SeaTimerElapsed += OnSeaTimerElapsed;
     }
 
+
+    #region SeaGame
+
+    public void StartSeaGame()
+    {
+        SeaGameStarted?.Invoke();
+        _seaTimer.StartTimer();
+    }
+
+    private void EndSeaGame()
+    {
+        SeaGameEnded?.Invoke();
+    }
+    #endregion
+    
     #region React To SeaTimer Events
 
     private void OnSeaTimerElapsed()
     {
-        SeaGameEnded?.Invoke();
+        EndSeaGame();
     }
 
     #endregion

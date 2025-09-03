@@ -1,10 +1,12 @@
 using System;
+using TMPro.Examples;
 using UnityEngine;
 
 public class SeaTimer : MonoBehaviour
 {
     #region Fields
-    private float _seaTimer = 30; 
+    private float _seaTimer = 30;
+    private bool _seaTimerOn = false;
     #endregion
 
     #region Actions
@@ -13,7 +15,7 @@ public class SeaTimer : MonoBehaviour
 
     #endregion
 
-    #region Init
+    #region Timer
 
     public void InitTimer(float seaGameLength)
     {
@@ -23,18 +25,35 @@ public class SeaTimer : MonoBehaviour
         }
     }
 
+    public void StartTimer()
+    {
+        _seaTimerOn = true;
+    }
+
+    public void StopTimer()
+    {
+        _seaTimerOn = false;
+    }
+
+    private void TickTimer(float deltaTime)
+    {
+        if(_seaTimerOn == false) return;
+        
+        _seaTimer -= deltaTime;
+
+        if (_seaTimer <= 0)
+        {
+            SeaTimerElapsed?.Invoke();
+        }
+    }
+
     #endregion
     
     #region Unity Lifecycle
 
     void Update()
     {
-        _seaTimer -= Time.deltaTime;
-
-        if (_seaTimer <= 0)
-        {
-            SeaTimerElapsed?.Invoke();
-        }
+        TickTimer(Time.deltaTime);
     }
 
     #endregion
