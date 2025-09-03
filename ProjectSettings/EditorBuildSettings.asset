@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_ParadiseOne/Scenes/GameScenes/MainMenu.unity
+    path: Assets/_ParadiseOne/Scenes Tests/GameScenes/MainMenu.unity
     guid: 9800e47567122df449a0f0aaa63bcaab
   - enabled: 1
-    path: Assets/_ParadiseOne/Scenes/GameScenes/SeaLevel.unity
+    path: Assets/_ParadiseOne/Scenes Tests/GameScenes/SeaLevel.unity
     guid: b2966b697a05aa4488ff5d4f7177fe1d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
