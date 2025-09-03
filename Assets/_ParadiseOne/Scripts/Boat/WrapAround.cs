@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class WrapAroundSoft : MonoBehaviour
+public class WrapAround : MonoBehaviour
 {
     [SerializeField] private float _minX, _maxX, _minY, _maxY;
     [Range(0f, 1f)]
-    [SerializeField] private float wrapTowardsCenter;
+    [SerializeField] private float _wrapTowardsCenter;
 
     private Vector2 center => new Vector2((_minX + _maxX) * 0.5f, (_minY + _maxY) * 0.5f);
 
@@ -17,8 +17,8 @@ public class WrapAroundSoft : MonoBehaviour
         {
             Vector2 symPos = new Vector2(2 * c.x - pos.x, 2 * c.y - pos.y);
 
-            pos.x = Mathf.Lerp(symPos.x, c.x, wrapTowardsCenter);
-            pos.y = Mathf.Lerp(symPos.y, c.y, wrapTowardsCenter);
+            pos.x = Mathf.Lerp(symPos.x, c.x, _wrapTowardsCenter);
+            pos.y = Mathf.Lerp(symPos.y, c.y, _wrapTowardsCenter);
 
             transform.position = pos;
         }
