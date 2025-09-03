@@ -7,6 +7,7 @@ public class SeaTimer : MonoBehaviour
     #region Fields
     private float _seaTimer = 30;
     private bool _seaTimerOn = false;
+    private bool _isLooping = false;
     #endregion
 
     #region Actions
@@ -17,12 +18,14 @@ public class SeaTimer : MonoBehaviour
 
     #region Timer
 
-    public void InitTimer(float seaGameLength)
+    public void InitTimer(float timerValue, bool isLooping = false)
     {
-        if (seaGameLength > 0)
+        if (timerValue > 0)
         {
-            _seaTimer = seaGameLength;
+            _seaTimer = timerValue;
         }
+
+        _isLooping = isLooping;
     }
 
     public void StartTimer()

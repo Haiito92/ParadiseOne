@@ -1,11 +1,17 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SeaManager : MonoBehaviour
 {
     #region Fields
     [SerializeField] private SeaDataSO _seaData;
     [SerializeField] private SeaTimer _seaTimer;
+    [SerializeField] private SeaFishSpawner _seaFishSpawner;
+    #endregion
+
+    #region Properties
+    [field:SerializeField] public SeaScores SeaScores { get; private set; }
     #endregion
 
     #region Actions
@@ -23,6 +29,7 @@ public class SeaManager : MonoBehaviour
     private void Start()
     {
         _seaTimer.SeaTimerElapsed += OnSeaTimerElapsed;
+        _seaFishSpawner.SpawnedFishCollected += OnSeaFishCollected;
     }
 
 
@@ -30,6 +37,7 @@ public class SeaManager : MonoBehaviour
 
     public void StartSeaGame()
     {
+        SeaScores.ResetScores();
         SeaGameStarted?.Invoke();
         _seaTimer.StartTimer();
     }
@@ -41,11 +49,18 @@ public class SeaManager : MonoBehaviour
     #endregion
     
     #region React To SeaTimer Events
-
     private void OnSeaTimerElapsed()
     {
         EndSeaGame();
     }
+    #endregion
+    
+    #region React To SeaFishSpawner Events
+    
 
+    private void OnSeaFishCollected(PlayerEnum collector, int scoreToAdd)
+    {
+        SeaScores.AddScore(collector, scoreToAdd);
+    }
     #endregion
 }

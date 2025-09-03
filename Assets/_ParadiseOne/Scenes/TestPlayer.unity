@@ -590,6 +590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boat
       objectReference: {fileID: 0}
+    - target: {fileID: 1810651257271202673, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
+      propertyPath: MaxSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3010362120292210655, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
@@ -600,6 +604,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3010362120292210655, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184059779790598403, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 4184059779790598403, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
+      propertyPath: _wrapTowardsCenter
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
