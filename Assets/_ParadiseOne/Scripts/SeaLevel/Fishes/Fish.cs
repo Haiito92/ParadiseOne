@@ -4,12 +4,12 @@ using UnityEngine;
 public abstract class Fish : MonoBehaviour, IFish
 {
     #region Properties
-    [Header("References")]
+    [Header("Fish References")]
     [SerializeField] private SeaTimer _fishLifeTimer;
     
-    [Header("Fish Stats")]
-    [field: SerializeField] public int Score { get; private set; } = 10;
+    [field:Header("Fish Stats")]
 
+    [field: SerializeField] public int Score { get; private set; } = 10;
     [SerializeField] private float _fishLifeTime = 10;
     
     #endregion

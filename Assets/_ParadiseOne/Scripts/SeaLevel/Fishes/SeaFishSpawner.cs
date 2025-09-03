@@ -112,11 +112,13 @@ public class SeaFishSpawner : MonoBehaviour
     private void AddFish(Fish fish)
     {
         _fishes.Add(fish);
+        fish.FishCollected += OnFishCollected;
         fish.FishDied += OnFishDied;
     }
 
     private void RemoveFish(Fish fish)
     {
+        fish.FishCollected -= OnFishCollected;
         fish.FishDied -= OnFishDied;
         _fishes.Remove(fish);
     }

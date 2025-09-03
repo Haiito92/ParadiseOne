@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Vivano : Fish
 {
-    [Header("References")]
+    [Header("Vivano References")]
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private SeaTimer _changeDirectionTimer;
     
-    [Header("Variables")]
+    [Header("Vivano Stats")]
     [SerializeField] private float _speed;
 
     [SerializeField, Tooltip("In seconds")] private float _changeDirectionTime;

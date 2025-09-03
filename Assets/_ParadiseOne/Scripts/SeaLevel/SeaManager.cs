@@ -5,6 +5,7 @@ using UnityEngine;
 public class SeaManager : MonoBehaviour
 {
     #region Fields
+    [Header("Sea Level Manager Setup")]
     [SerializeField] private SeaDataSO _seaData;
     [SerializeField] private SeaFishSpawner _seaFishSpawner;
     #endregion
@@ -12,6 +13,9 @@ public class SeaManager : MonoBehaviour
     #region Properties
     [field:SerializeField] public SeaScores SeaScores { get; private set; }
     [field:SerializeField] public SeaTimer SeaTimer { get; private set; }
+
+    [SerializeField] private BoatControllerAbsolute _playerOneBoat;
+    [SerializeField] private BoatControllerAbsolute _playerTwoBoat;
     #endregion
 
     #region Actions
@@ -41,11 +45,21 @@ public class SeaManager : MonoBehaviour
         SeaGameStarted?.Invoke();
         SeaTimer.StartTimer();
         _seaFishSpawner.StartSpawner();
+        
+        if(!_playerOneBoat) Debug.LogError("Missing Player One Boat");
+        _playerOneBoat.StartBoat();
+        
+        if(!_playerTwoBoat) Debug.LogError("Missing Player Two Boat");
+        _playerTwoBoat.StartBoat();
     }
 
     private void EndSeaGame()
     {
         _seaFishSpawner.StopSpawner();
+        
+        _playerOneBoat?.StopBoat();
+        _playerTwoBoat?.StopBoat();
+        
         SeaGameEnded?.Invoke();
     }
     #endregion
