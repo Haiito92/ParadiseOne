@@ -47,7 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawningTimer: {fileID: 3837007328738466174}
   _spawningInterval: 1
-  _maxNumberOfFish: 20
+  _maxNumberOfFish: 10
+  _oursinPrefab: {fileID: 3646155757772052553, guid: 912f2f4b5c559fb45adf852c17be1ed6, type: 3}
 --- !u!114 &3837007328738466174
 MonoBehaviour:
   m_ObjectHideFlags: 0
