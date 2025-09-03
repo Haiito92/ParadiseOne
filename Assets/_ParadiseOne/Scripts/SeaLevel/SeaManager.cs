@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SeaManager : MonoBehaviour
 {
@@ -7,7 +8,10 @@ public class SeaManager : MonoBehaviour
     [SerializeField] private SeaDataSO _seaData;
     [SerializeField] private SeaTimer _seaTimer;
     [SerializeField] private SeaFishSpawner _seaFishSpawner;
-    [SerializeField] private SeaScores _seaScores;
+    #endregion
+
+    #region Properties
+    [field:SerializeField] public SeaScores SeaScores { get; private set; }
     #endregion
 
     #region Actions
@@ -33,7 +37,7 @@ public class SeaManager : MonoBehaviour
 
     public void StartSeaGame()
     {
-        _seaScores.ResetScores();
+        SeaScores.ResetScores();
         SeaGameStarted?.Invoke();
         _seaTimer.StartTimer();
     }
@@ -56,7 +60,7 @@ public class SeaManager : MonoBehaviour
 
     private void OnSeaFishCollected(PlayerEnum collector, int scoreToAdd)
     {
-        _seaScores.AddScore(collector, scoreToAdd);
+        SeaScores.AddScore(collector, scoreToAdd);
     }
     #endregion
 }
