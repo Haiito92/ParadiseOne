@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 9f6e15be8a95f254fb3c6d51b629bdb8
+guid: 9242ded86d9e4634b9635f15b6c05b83
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4205582155101141181
-    second: Rocher 02_0
-  - first:
-      213: -2194137451808364918
-    second: Rocher 02_1
+      213: -4424856615529151040
+    second: Rochers RE FIXED 01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rocher 02_0
+      name: Rochers RE FIXED 01_0
       rect:
         serializedVersion: 2
-        x: 73
-        y: 50
-        width: 344
-        height: 415
+        x: 23
+        y: 61
+        width: 433
+        height: 379
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db8768c10ba3d5a30800000000000000
-      internalID: 4205582155101141181
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocher 02_1
-      rect:
-        serializedVersion: 2
-        x: 350
-        y: 289
-        width: 104
-        height: 126
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a86e494dc9bdc81e0800000000000000
-      internalID: -2194137451808364918
+      spriteID: 0c509512a50c792c0800000000000000
+      internalID: -4424856615529151040
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Rocher 02_0: 4205582155101141181
-      Rocher 02_1: -2194137451808364918
+      Rochers RE FIXED 01_0: -4424856615529151040
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
