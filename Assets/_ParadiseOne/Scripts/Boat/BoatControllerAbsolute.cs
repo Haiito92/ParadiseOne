@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -45,5 +46,19 @@ public class BoatControllerAbsolute : MonoBehaviour
     private void OnInputEvent(InputAction.CallbackContext ctx)
     {
         _inputVector = ctx.ReadValue<Vector2>();
+    }
+
+    //// FOR TESTS PURPOSES ONLY. DO NOT CALL THOSE FUNCTIONS FROM OTHER SCRIPTS OR EVEN IN THIS ONE. ////
+
+    [Button]
+    public void StartBoat()
+    {
+        IsActive = true;
+    }
+
+    [Button]
+    public void StopBoat()
+    {
+        IsActive = false;
     }
 }
