@@ -25,6 +25,7 @@ public class Vivano : Fish
         Vector2 newDirection = new Vector2(randomX, randomY); 
         
         _swimmingDirection = newDirection.normalized;
+        transform.up = _swimmingDirection;
         _rigidbody.linearVelocity = _swimmingDirection * _speed * Time.fixedDeltaTime;
     }
     

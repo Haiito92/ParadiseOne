@@ -6,8 +6,8 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Vivano
+  m_Name: Marlin
   m_Controller: {fileID: 9100000, guid: 072fcd34e6e1370438f50e74aceecb3f, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: f7be721eee3a3d549a9497710c37a397, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 05a6f5e4b81051346b0483f4f04c917e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a46269fd7d722c6428cd2e04a2451e99, type: 2}
