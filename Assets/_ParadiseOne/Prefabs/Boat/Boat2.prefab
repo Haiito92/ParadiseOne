@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _input: {fileID: -2550286034279086236, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  _acceleration: 8
+  Acceleration: 8
   MaxSpeed: 3
   TurnSpeed: 120
 --- !u!114 &3077570600644082789
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _input: {fileID: -6284008379990553701, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _boostAcceleration: 16
   _boostMaxSpeed: 6
   _boostTurnSpeed: 240
   _maxDurationBoost: 2
