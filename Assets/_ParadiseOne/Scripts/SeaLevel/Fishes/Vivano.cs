@@ -64,16 +64,16 @@ public class Vivano : Fish
         _changeDirectionTimer.StartTimer();
     }
 
-    public override void BeFast(float speedMultiplier)
+    public override void BeFast(float speedMultiplier, bool animate)
     {
-        base.BeFast(speedMultiplier);
+        base.BeFast(speedMultiplier, animate);
         
         _rigidbody.linearVelocity = _swimmingDirection * _speed * Time.fixedDeltaTime;
     }
 
-    public override void BeSlow()
+    public override void BeSlow( bool animate)
     {
-        base.BeSlow();
+        base.BeSlow(animate);
         
         _rigidbody.linearVelocity = _swimmingDirection * _speed * Time.fixedDeltaTime;
     }

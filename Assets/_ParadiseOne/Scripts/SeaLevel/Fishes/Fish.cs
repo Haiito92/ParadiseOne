@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public abstract class Fish : MonoBehaviour, IFish
@@ -41,7 +42,7 @@ public abstract class Fish : MonoBehaviour, IFish
         _scale = _originalScale;
 
         _originalOpacity = seaDataSo.FishBaseOpacity;
-        BeVisible();
+        BeVisible(false);
     }
     
     public virtual void StartFishLife()
@@ -68,29 +69,44 @@ public abstract class Fish : MonoBehaviour, IFish
 
     #region Fish Size
 
-    public void BeBig(float scaleMultiplier)
+    public void BeBig(float scaleMultiplier, bool animate = true)
     {
         _scale = _originalScale * scaleMultiplier;
         Vector3 newScaleVector = new Vector3(_scale, _scale, _scale);
-        transform.localScale = newScaleVector;
+
+        if (animate)
+        {
+            transform.DOScale(newScaleVector, 0.4f);
+        }
+        else
+        {
+            transform.localScale = newScaleVector;
+        }
     }
 
-    public void BeSmall()
+    public void BeSmall(bool animate = true)
     {
         _scale = _originalScale;
         Vector3 newScaleVector = new Vector3(_scale, _scale, _scale);
-        transform.localScale = newScaleVector;
+        if (animate)
+        {
+            transform.DOScale(newScaleVector, 0.4f);
+        }
+        else
+        {
+            transform.localScale = newScaleVector;
+        }
     }
     #endregion
 
     #region Fish Speed
 
-    public virtual void BeFast(float speedMultiplier)
+    public virtual void BeFast(float speedMultiplier, bool animate = true)
     {
         _speed = _originalSpeed * speedMultiplier;
     }
 
-    public virtual void BeSlow()
+    public virtual void BeSlow(bool animate = true)
     {
         _speed = _originalSpeed;
     }
@@ -98,18 +114,34 @@ public abstract class Fish : MonoBehaviour, IFish
 
     #region Fish Visibility
 
-    public void BeVisible()
+    public void BeVisible(bool animate = true)
     {
         Color newColor = _spriteRenderer.color;
         newColor.a = _originalOpacity;
-        _spriteRenderer.color = newColor;
+
+        if (animate)
+        {
+            _spriteRenderer.DOColor(newColor, 0.4f);
+        }
+        else
+        {
+            _spriteRenderer.color = newColor;
+        }
     }
 
-    public void BeNotVisible(float alpha)
+    public void BeNotVisible(float alpha, bool animate = true)
     {
         Color newColor = _spriteRenderer.color;
         newColor.a = alpha;
-        _spriteRenderer.color = newColor;
+        
+        if (animate)
+        {
+            _spriteRenderer.DOColor(newColor, 0.4f);
+        }
+        else
+        {
+            _spriteRenderer.color = newColor;
+        }
     }
     #endregion
 }

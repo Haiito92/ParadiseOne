@@ -133,13 +133,13 @@ public class SeaFishSpawner : MonoBehaviour
         switch (_seaEventRandomizer.CurrentEvent)
         {
             case SeaEventsEnum.BigFish:
-                fish.BeBig(_seaDataSO.FishScaleMultiplier);
+                fish.BeBig(_seaDataSO.FishScaleMultiplier, false);
                 break;
             case SeaEventsEnum.FastFish:
-                fish.BeFast(_seaDataSO.FishSpeedMultiplier);
+                fish.BeFast(_seaDataSO.FishSpeedMultiplier, false);
                 break;
             case SeaEventsEnum.CloudyWater:
-                fish.BeNotVisible(_seaDataSO.FishLessVisibleOpacity);
+                fish.BeNotVisible(_seaDataSO.FishLessVisibleOpacity, false);
                 break;
         }
     }

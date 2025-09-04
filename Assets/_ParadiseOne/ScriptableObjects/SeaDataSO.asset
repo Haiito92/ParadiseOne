@@ -20,6 +20,7 @@ MonoBehaviour:
   <FishSpeedMultiplier>k__BackingField: 1.5
   <FishScaleMultiplier>k__BackingField: 1.35
   <FishLessVisibleOpacity>k__BackingField: 0.35
+  <FishBaseOpacity>k__BackingField: 0.7
   <OursinLifeTime>k__BackingField: 5
   <OursinScore>k__BackingField: 10
   <VivanoLifeTime>k__BackingField: 5
