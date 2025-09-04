@@ -276,11 +276,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 453542221
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.89136887, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -330,9 +330,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _input: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  _acceleration: 6
-  MaxSpeed: 2.4
-  TurnSpeed: 140
+  Acceleration: 8
+  MaxSpeed: 3
+  TurnSpeed: 120
 --- !u!114 &976073358118995831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,9 +346,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _input: {fileID: -6543460158939210933, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _boostAcceleration: 16
   _boostMaxSpeed: 6
   _boostTurnSpeed: 240
-  _maxDurationBoost: 3
+  _maxDurationBoost: 2
   _rechargeRate: 0.2
   _minGaugeToBoost: 0.5
 --- !u!114 &4184059779790598403
@@ -444,8 +445,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1477681915
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 0, b: 1, a: 1}

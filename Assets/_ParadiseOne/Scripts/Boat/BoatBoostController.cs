@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class BoatBoostController : MonoBehaviour
 {
     [SerializeField] private InputActionReference _input;
+    [SerializeField] private float _boostAcceleration;
     [SerializeField] private float _boostMaxSpeed;
     [SerializeField] private float _boostTurnSpeed;
     [SerializeField] private float _maxDurationBoost;
@@ -11,14 +12,19 @@ public class BoatBoostController : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float _minGaugeToBoost;
 
     private BoatControllerAbsolute _boatControl;
+    private float _baseAcceleration;
     private float _baseMaxSpeed;
     private float _baseTurnSpeed;
     private float _currentBoostGauge;
     private bool _isBoosting;
 
+    public float CurrentBoostRatio => _currentBoostGauge / _maxDurationBoost;
+    public float MinGaugeToBoost => _minGaugeToBoost;
+
     private void Awake()
     {
         _boatControl = GetComponent<BoatControllerAbsolute>();
+        _baseAcceleration = _boatControl.Acceleration;
         _baseMaxSpeed = _boatControl.MaxSpeed;
         _baseTurnSpeed = _boatControl.TurnSpeed;
 
@@ -38,6 +44,7 @@ public class BoatBoostController : MonoBehaviour
     {
         HandleBoost();
 
+        _boatControl.Acceleration = _isBoosting ? _boostAcceleration : _baseAcceleration;
         _boatControl.MaxSpeed = _isBoosting ? _boostMaxSpeed : _baseMaxSpeed;
         _boatControl.TurnSpeed = _isBoosting ? _boostTurnSpeed : _baseTurnSpeed;
     }
