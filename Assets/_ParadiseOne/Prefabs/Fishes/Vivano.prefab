@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 848326408726609114}
   - component: {fileID: 7105458704583363150}
   - component: {fileID: 100237703918382323}
-  - component: {fileID: 2327180051137370064}
+  - component: {fileID: 7796169344925002395}
   - component: {fileID: 5551942868219577240}
+  - component: {fileID: 7431163272241414712}
   m_Layer: 7
   m_Name: Vivano
   m_TagString: Untagged
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 1133167073
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4966113606236600968, guid: 363d94728e282934095beb88f07329ea, type: 3}
+  m_Sprite: {fileID: -6298767795408318630, guid: 822d00ad37f4b4247b62d285066a2def, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,8 +120,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &2327180051137370064
-CircleCollider2D:
+--- !u!70 &7796169344925002395
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,7 +136,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 192
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -154,7 +155,8 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.475
+  m_Size: {x: 1.45, y: 4.55}
+  m_Direction: 0
 --- !u!114 &5551942868219577240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +172,28 @@ MonoBehaviour:
   _fishLifeTimer: {fileID: 1633744043433150990}
   _rigidbody: {fileID: 100237703918382323}
   _changeDirectionTimer: {fileID: 707603908197535768}
+--- !u!95 &7431163272241414712
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645549082830898178}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 14381d84fad47cf468271a4f53e68536, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2984209391028989089
 GameObject:
   m_ObjectHideFlags: 0

@@ -279,7 +279,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 640
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -801,8 +801,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 453542221
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -3892422786074042213, guid: f8f76764cbedc28429a1e07cf6875005, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
