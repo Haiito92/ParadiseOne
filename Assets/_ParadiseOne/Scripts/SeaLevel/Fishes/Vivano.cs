@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Vivano : Fish
 {
@@ -6,10 +7,8 @@ public class Vivano : Fish
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private SeaTimer _changeDirectionTimer;
     
-    [Header("Vivano Stats")]
-    [SerializeField] private float _speed;
-
-    [SerializeField, Tooltip("In seconds")] private float _changeDirectionTime;
+    private float _speed;
+    private float _changeDirectionInterval;
     private Vector2 _swimmingDirection;
 
     private void SetRandomDirection()
@@ -41,13 +40,24 @@ public class Vivano : Fish
         base.CollectFish(collector);
     }
 
+    public override void InitFish(SeaDataSO seaDataSo)
+    {
+        base.InitFish(seaDataSo);
+
+        _fishLifeTime = seaDataSo.VivanoLifeTime;
+        Score = seaDataSo.VivanoScore;
+
+        _speed = seaDataSo.VivanoSpeed;
+        _changeDirectionInterval = seaDataSo.VivanoChangeDirectionInterval;
+    }
+
     public override void StartFishLife()
     {
         base.StartFishLife();
         
         SetRandomDirection();
         
-        _changeDirectionTimer.InitTimer(_changeDirectionTime, true);
+        _changeDirectionTimer.InitTimer(_changeDirectionInterval, true);
         _changeDirectionTimer.SeaTimerElapsed += OnChangeDirectionTimerElapsed;
         
         _changeDirectionTimer.StartTimer();

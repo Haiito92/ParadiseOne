@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 public class SeaFishSpawner : MonoBehaviour
 {
     #region Fields
+
+    private SeaDataSO _seaDataSO;
     
     private List<Fish> _fishes = new List<Fish>();
 
@@ -14,8 +16,8 @@ public class SeaFishSpawner : MonoBehaviour
     private Rect _spawningZone;
 
     [SerializeField] private SeaTimer _spawningTimer;
-    [SerializeField] private float _spawningInterval = 5;
-    [SerializeField] private int _maxNumberOfFish;
+    private float _spawningInterval = 5;
+    private int _maxNumberOfFish;
 
     [SerializeField] private List<GameObject> _fishesPrefab;
     #endregion
@@ -40,8 +42,18 @@ public class SeaFishSpawner : MonoBehaviour
         _spawningZone = new Rect(spawningZonePosition, spawningZoneSize);
     }
 
-    public void InitSeaFishSpawner()
+    public void InitSeaFishSpawner(SeaDataSO seaDataSo)
     {
+        if (seaDataSo == null)
+        {
+            Debug.LogError("SeaFishSpawner : SeaDataSO is NULL");
+            return;
+        }
+        _seaDataSO = seaDataSo;
+
+        _maxNumberOfFish = _seaDataSO.MaxNumberOfFishes;
+        _spawningInterval = _seaDataSO.SpawningInterval;
+        
         // Setup of spawning zone;
 
         _seaLevelCamera = Camera.main;
@@ -106,6 +118,7 @@ public class SeaFishSpawner : MonoBehaviour
 
         AddFish(fish);
         
+        fish.InitFish(_seaDataSO);
         fish.StartFishLife();
     }
 

@@ -1,12 +1,13 @@
 using System;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SeaManager : MonoBehaviour
 {
     #region Fields
     [Header("Sea Level Manager Setup")]
-    [SerializeField] private SeaDataSO _seaData;
+    [SerializeField] private SeaDataSO _seaDataSO;
     [SerializeField] private SeaFishSpawner _seaFishSpawner;
     #endregion
 
@@ -25,9 +26,9 @@ public class SeaManager : MonoBehaviour
     
     private void Awake()
     {
-        SeaTimer.InitTimer(_seaData.SeaGameLength);
+        SeaTimer.InitTimer(_seaDataSO.SeaGameLength);
         
-        _seaFishSpawner.InitSeaFishSpawner();
+        _seaFishSpawner.InitSeaFishSpawner(_seaDataSO);
     }
 
     private void Start()
