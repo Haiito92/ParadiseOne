@@ -434,7 +434,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: f79993afcca099542ba6a74545922821, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -456,7 +456,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 5861665529814873941, guid: bc48e101de149464e9c962463fc51ab2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6773585, g: 1, b: 0.999389, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -692,10 +692,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3541314848705579570, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
+      propertyPath: _up
+      value: 
+      objectReference: {fileID: -1556496208077542342, guid: c875af4af37712b459fc873700fe2aad, type: 3}
+    - target: {fileID: 3541314848705579570, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
+      propertyPath: _down
+      value: 
+      objectReference: {fileID: -2718184294650008124, guid: 61fa7854b2be5144597c1c58c3ead51b, type: 3}
+    - target: {fileID: 3541314848705579570, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
+      propertyPath: _left
+      value: 
+      objectReference: {fileID: 1239891958699705337, guid: 1420a5ad5f53f8b45b83203ccdc0384b, type: 3}
+    - target: {fileID: 3541314848705579570, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
+      propertyPath: _right
+      value: 
+      objectReference: {fileID: -9068994442718500448, guid: c7e11eea240e5804db568bd000e65185, type: 3}
+    - target: {fileID: 3541314848705579570, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
+      propertyPath: _upLeft
+      value: 
+      objectReference: {fileID: -2899026303807873721, guid: 1cc0fd69e8bbe7741bd3f13df344acbb, type: 3}
+    - target: {fileID: 3541314848705579570, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
+      propertyPath: _upRight
+      value: 
+      objectReference: {fileID: -8382754897919530608, guid: b83c8a46785ada048bbb998d8b7a00e9, type: 3}
+    - target: {fileID: 3541314848705579570, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
+      propertyPath: _downLeft
+      value: 
+      objectReference: {fileID: -969196948877204943, guid: 20e498771e1ebe84b98902798487517e, type: 3}
+    - target: {fileID: 3541314848705579570, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
+      propertyPath: _downRight
+      value: 
+      objectReference: {fileID: 3241998575783690338, guid: 698c6817c972c5c44b630d2869116b3c, type: 3}
     - target: {fileID: 4184059779790598403, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 533249549}
+    - target: {fileID: 7416829421174135596, guid: 74bbb83ef80b6404fb23d920e1c5bc92, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1556496208077542342, guid: c875af4af37712b459fc873700fe2aad, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

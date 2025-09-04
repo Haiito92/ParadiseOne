@@ -51,7 +51,7 @@ Material:
     - _DX_pan: 0.1
     - _DY_pan: 0
     - _D_Max: 1.75
-    - _D_Min: 0.5
+    - _D_Min: 0.3
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0
