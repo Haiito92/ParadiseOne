@@ -75,6 +75,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Tried to play null clip");
             return;
         }
+        if(_musicSource.clip == clip) return;
 
         _musicSource.clip = clip;
         _musicSource.loop = loop;
@@ -89,7 +90,8 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Tried to play null clip");
             return;
         }
-        
+        if(_ambianceSource.clip == clip) return;
+
         _ambianceSource.clip = clip;
         _ambianceSource.loop = loop;
         

@@ -1,4 +1,5 @@
-using System.Collections.Generic;using NaughtyAttributes;using UnityEditor.PackageManager;
+using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SeaDataSO", menuName = "Scriptable Objects/SeaDataSO")]
