@@ -32,7 +32,7 @@ public class SeaManager : MonoBehaviour
     {
         SeaTimer.InitTimer(_seaDataSO.SeaGameLength);
         
-        _seaEventRandomizer.InitSeaEventRandomizer(_seaDataSO, _seaAudiosSO);
+        _seaEventRandomizer.InitSeaEventRandomizer(_seaDataSO);
         _seaEventRandomizer.EventStarted += OnSeaEventStarted;
         _seaEventRandomizer.EventStopped += OnSeaEventStopped;
         

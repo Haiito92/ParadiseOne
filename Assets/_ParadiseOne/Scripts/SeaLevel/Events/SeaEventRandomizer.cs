@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
@@ -13,17 +15,22 @@ public class SeaEventRandomizer : MonoBehaviour
     private List<SeaEventsEnum> _allEvents = new List<SeaEventsEnum>();
     public SeaEventsEnum CurrentEvent { get; private set; }
 
-    private AudioClip _newEventSound;
     #endregion
 
-    #region Actions
+    #region Actions/Unity Events
 
     public event Action<SeaEventsEnum> EventStarted;
     public event Action<SeaEventsEnum> EventStopped;
 
-    #endregion    
+    [SerializeField] private UnityEvent<SeaEventsEnum> EventStartedUE;
+    #endregion
 
-    public void InitSeaEventRandomizer(SeaDataSO seaDataSo, SeaAudiosSO seaAudiosSo)
+    private void Awake()
+    {
+        EventStartedUE.AddListener((eventType)=> EventStarted?.Invoke(eventType));
+    }
+
+    public void InitSeaEventRandomizer(SeaDataSO seaDataSo)
     {
         _eventLength = seaDataSo.EventLength;
 
@@ -32,8 +39,6 @@ public class SeaEventRandomizer : MonoBehaviour
         
         _eventTimer.InitTimer(_eventLength, true);
         _eventTimer.SeaTimerElapsed += OnEventTimerElapsed;
-
-        _newEventSound = seaAudiosSo.NewEventSound;
     }
 
     public void StartSeaEventRandomizer()
@@ -55,9 +60,8 @@ public class SeaEventRandomizer : MonoBehaviour
 
         CurrentEvent = _allEvents[randomIndex];
 
-        EventStarted?.Invoke(CurrentEvent);
-        AudioManager.Instance?.PlaySound2D(_newEventSound);
-        
+        EventStartedUE?.Invoke(CurrentEvent);
+
         Debug.LogWarning($"New event is : {CurrentEvent}");
     }
     #endregion

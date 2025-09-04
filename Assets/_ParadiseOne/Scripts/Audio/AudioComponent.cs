@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class AudioComponent : MonoBehaviour
 {
-    public void PlaySound(AudioClip clip, Vector3 position)
+    public void PlaySound(AudioClip clip)
     {
-        AudioManager.Instance?.PlaySound(clip, position);
+        AudioManager.Instance?.PlaySound(clip, transform.position);
     }
 
     public void PlaySound2D(AudioClip clip)
