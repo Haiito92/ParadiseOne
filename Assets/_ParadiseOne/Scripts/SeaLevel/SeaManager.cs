@@ -108,6 +108,7 @@ public class SeaManager : MonoBehaviour
                 _seaFishSpawner.AllFishBig();
                 break;
             case SeaEventsEnum.CloudyWater:
+                _seaFishSpawner.AllFishNotVisible();
                 break;
             case SeaEventsEnum.InvertedControls:
                 _playerOneBoat.SetInvertedInputs(true);
@@ -137,6 +138,7 @@ public class SeaManager : MonoBehaviour
                 _seaFishSpawner.AllFishSmall();
                 break;
             case SeaEventsEnum.CloudyWater:
+                _seaFishSpawner.AllFishVisible();
                 break;
             case SeaEventsEnum.InvertedControls:
                 _playerOneBoat.SetInvertedInputs(false);

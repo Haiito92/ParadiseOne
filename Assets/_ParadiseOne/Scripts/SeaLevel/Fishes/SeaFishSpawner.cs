@@ -130,13 +130,17 @@ public class SeaFishSpawner : MonoBehaviour
         fish.InitFish(_seaDataSO);
         fish.StartFishLife();
 
-        if (_seaEventRandomizer.CurrentEvent == SeaEventsEnum.BigFish)
+        switch (_seaEventRandomizer.CurrentEvent)
         {
-            fish.BeBig(_seaDataSO.FishScaleMultiplier);
-        }
-        else if (_seaEventRandomizer.CurrentEvent == SeaEventsEnum.FastFish)
-        {
-            fish.BeFast(_seaDataSO.FishSpeedMultiplier);
+            case SeaEventsEnum.BigFish:
+                fish.BeBig(_seaDataSO.FishScaleMultiplier);
+                break;
+            case SeaEventsEnum.FastFish:
+                fish.BeFast(_seaDataSO.FishSpeedMultiplier);
+                break;
+            case SeaEventsEnum.CloudyWater:
+                fish.BeNotVisible(_seaDataSO.FishLessVisibleOpacity);
+                break;
         }
     }
 
@@ -183,6 +187,22 @@ public class SeaFishSpawner : MonoBehaviour
         foreach (Fish fish in _fishes)
         {
             fish.BeSlow();
+        }
+    }
+    
+    public void AllFishVisible()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            fish.BeVisible();
+        }
+    }
+    
+    public void AllFishNotVisible()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            fish.BeNotVisible(_seaDataSO.FishLessVisibleOpacity);
         }
     }
     #endregion
