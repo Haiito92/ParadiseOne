@@ -111,8 +111,9 @@ public class SeaManager : MonoBehaviour
                 _seaFishSpawner.AllFishNotVisible();
                 break;
             case SeaEventsEnum.InvertedControls:
-                _playerOneBoat.SetInvertedInputs(true);
-                _playerTwoBoat.SetInvertedInputs(true);
+                _playerOneBoat.InvertedInputsOn();
+                _playerTwoBoat.InvertedInputsOn();
+                
                 break;
             case SeaEventsEnum.UnlimitedBoost:
                 _playerOneBoostController.InfiniteBoostOn();
@@ -141,8 +142,8 @@ public class SeaManager : MonoBehaviour
                 _seaFishSpawner.AllFishVisible();
                 break;
             case SeaEventsEnum.InvertedControls:
-                _playerOneBoat.SetInvertedInputs(false);
-                _playerTwoBoat.SetInvertedInputs(false);
+                _playerOneBoat.InvertedInputsOff();
+                _playerTwoBoat.InvertedInputsOff();
                 break;
             case SeaEventsEnum.UnlimitedBoost:
                 _playerOneBoostController.InfiniteBoostOff();
