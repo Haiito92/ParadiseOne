@@ -1669,14 +1669,6 @@ PrefabInstance:
       propertyPath: _playerTwoBoat
       value: 
       objectReference: {fileID: 185049148}
-    - target: {fileID: 7856071439492658722, guid: fc01da86bf3ce6d40b950c938764ec1a, type: 3}
-      propertyPath: _fishes.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7856071439492658722, guid: fc01da86bf3ce6d40b950c938764ec1a, type: 3}
-      propertyPath: '_fishes.Array.data[0]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7933397763958108306, guid: fc01da86bf3ce6d40b950c938764ec1a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

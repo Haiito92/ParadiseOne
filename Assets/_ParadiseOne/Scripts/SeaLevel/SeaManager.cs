@@ -9,6 +9,7 @@ public class SeaManager : MonoBehaviour
     [Header("Sea Level Manager Setup")]
     [SerializeField] private SeaDataSO _seaDataSO;
     [SerializeField] private SeaFishSpawner _seaFishSpawner;
+    [SerializeField] private SeaEventRandomizer _seaEventRandomizer;
     #endregion
 
     #region Properties
@@ -29,6 +30,7 @@ public class SeaManager : MonoBehaviour
         SeaTimer.InitTimer(_seaDataSO.SeaGameLength);
         
         _seaFishSpawner.InitSeaFishSpawner(_seaDataSO);
+        _seaEventRandomizer.InitSeaEventRandomizer(_seaDataSO);
     }
 
     private void Start()
@@ -52,10 +54,13 @@ public class SeaManager : MonoBehaviour
         
         if(!_playerTwoBoat) Debug.LogError("Missing Player Two Boat");
         _playerTwoBoat.StartBoat();
+        
+        _seaEventRandomizer.StartSeaEventRandomizer();
     }
 
     private void EndSeaGame()
     {
+        _seaEventRandomizer.StopSeaEventRandomizer();
         _seaFishSpawner.StopSpawner();
         
         _playerOneBoat?.StopBoat();

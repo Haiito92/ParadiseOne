@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+using System.Collections.Generic;using NaughtyAttributes;using UnityEditor.PackageManager;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SeaDataSO", menuName = "Scriptable Objects/SeaDataSO")]
@@ -15,6 +15,13 @@ public class SeaDataSO : ScriptableObject
 
     [field: SerializeField, Tooltip("In seconds")] public float SpawningInterval { get; private set; } = 1.5f;
 
+    [field: Header("EVENT RANDOMIZER")]
+    [field: SerializeField, Tooltip("In seconds")] public float EventLength { get; private set; } = 5;
+
+    [field: SerializeField]
+    public List<SeaEventsEnum> Events { get; private set; } = new List<SeaEventsEnum>();
+    
+    
     [field: Header("FISHES")]
     [field: Header("Oursin")]
     [field: SerializeField, Tooltip("In seconds")]
