@@ -7,10 +7,8 @@ public abstract class Fish : MonoBehaviour, IFish
     [Header("Fish References")]
     [SerializeField] private SeaTimer _fishLifeTimer;
     
-    [field:Header("Fish Stats")]
-
-    [field: SerializeField] public int Score { get; private set; } = 10;
-    [SerializeField] private float _fishLifeTime = 10;
+    public int Score { get; protected set; } = 10;
+    protected float _fishLifeTime = 10;
     
     #endregion
 
@@ -26,6 +24,11 @@ public abstract class Fish : MonoBehaviour, IFish
         KillFish();
     }
 
+    public virtual void InitFish(SeaDataSO seaDataSo)
+    {
+        
+    }
+    
     public virtual void StartFishLife()
     {
         _fishLifeTimer.InitTimer(_fishLifeTime);
