@@ -330,9 +330,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _input: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  _acceleration: 8
-  MaxSpeed: 3
-  TurnSpeed: 120
+  _acceleration: 6
+  MaxSpeed: 2.4
+  TurnSpeed: 140
 --- !u!114 &976073358118995831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +348,7 @@ MonoBehaviour:
   _input: {fileID: -6543460158939210933, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _boostMaxSpeed: 6
   _boostTurnSpeed: 240
-  _maxDurationBoost: 2
+  _maxDurationBoost: 3
   _rechargeRate: 0.2
   _minGaugeToBoost: 0.5
 --- !u!114 &4184059779790598403
@@ -366,8 +366,6 @@ MonoBehaviour:
   _camera: {fileID: 0}
   _netTransform: {fileID: 1562998199605245819}
   _marggin: 0.3
-  _cornerZoneRatioX: 0.2
-  _cornerZoneRatioY: 0.2
 --- !u!1 &4702944397914306394
 GameObject:
   m_ObjectHideFlags: 0
