@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class BoatControllerAbsolute : MonoBehaviour
 {
     [SerializeField] private InputActionReference _input;
+    [SerializeField] private BoatSpriteAnimator _animator;
 
     private Rigidbody2D _rb;
     private Vector2 _inputVector;
@@ -47,6 +48,11 @@ public class BoatControllerAbsolute : MonoBehaviour
             float newAngle = Mathf.MoveTowardsAngle(_rb.rotation, targetAngle, TurnSpeed * Time.fixedDeltaTime);
             _rb.MoveRotation(newAngle);
         }
+    }
+
+    private void Update()
+    {
+        _animator.SetBoatSprite(_currentVelocity);
     }
 
     private void OnInputPerformed(InputAction.CallbackContext ctx)
