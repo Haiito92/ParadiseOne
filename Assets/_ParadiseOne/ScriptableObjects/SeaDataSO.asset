@@ -12,4 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa10337172d91114c862ab684be6530f, type: 3}
   m_Name: SeaDataSO
   m_EditorClassIdentifier: 
-  SeaGameLength: 120
+  <SeaGameLength>k__BackingField: 30
+  <MaxNumberOfFishes>k__BackingField: 10
+  <SpawningInterval>k__BackingField: 1.5
+  <EventLength>k__BackingField: 5
+  <Events>k__BackingField: 0300000003000000030000000300000003000000
+  <FishSpeedMultiplier>k__BackingField: 1.5
+  <FishScaleMultiplier>k__BackingField: 1.35
+  <FishLessVisibleOpacity>k__BackingField: 0.35
+  <OursinLifeTime>k__BackingField: 5
+  <OursinScore>k__BackingField: 10
+  <VivanoLifeTime>k__BackingField: 5
+  <VivanoScore>k__BackingField: 10
+  <VivanoSpeed>k__BackingField: 50
+  <VivanoChangeDirectionInterval>k__BackingField: 1
+  <BoatMaxSpeed>k__BackingField: 3
+  <BoatAcceleration>k__BackingField: 8
+  <BoatTurnSpeed>k__BackingField: 120
+  <BoostBoatMaxSpeed>k__BackingField: 6
+  <BoostBoatAcceleration>k__BackingField: 16
+  <BoostBoatTurnSpeed>k__BackingField: 240
+  <MaxDurationBoost>k__BackingField: 2
+  <RechargeRate>k__BackingField: 0.2
+  <MinQuantityToBoost>k__BackingField: 0.5

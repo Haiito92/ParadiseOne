@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8581df91b2dedee4d9384af13f895c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 7738496546774456686}
   _fishLifeTimer: {fileID: -5600537288166864318}
 --- !u!114 &-5600537288166864318
 MonoBehaviour:
