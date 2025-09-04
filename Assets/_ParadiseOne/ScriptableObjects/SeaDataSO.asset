@@ -16,7 +16,7 @@ MonoBehaviour:
   <MaxNumberOfFishes>k__BackingField: 10
   <SpawningInterval>k__BackingField: 1.5
   <EventLength>k__BackingField: 5
-  <Events>k__BackingField: 0300000003000000030000000300000003000000
+  <Events>k__BackingField: 0100000002000000030000000400000005000000
   <FishSpeedMultiplier>k__BackingField: 1.5
   <FishScaleMultiplier>k__BackingField: 1.35
   <FishLessVisibleOpacity>k__BackingField: 0.35
