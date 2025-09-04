@@ -18,6 +18,8 @@ public abstract class Fish : MonoBehaviour, IFish
     
     protected float _originalScale;
     protected float _scale;
+
+    protected float _originalOpacity;
     #endregion
 
     #region Actions
@@ -37,6 +39,9 @@ public abstract class Fish : MonoBehaviour, IFish
     {
         _originalScale = transform.localScale.x;
         _scale = _originalScale;
+
+        _originalOpacity = seaDataSo.FishBaseOpacity;
+        BeVisible();
     }
     
     public virtual void StartFishLife()
@@ -96,7 +101,7 @@ public abstract class Fish : MonoBehaviour, IFish
     public void BeVisible()
     {
         Color newColor = _spriteRenderer.color;
-        newColor.a = 1f;
+        newColor.a = _originalOpacity;
         _spriteRenderer.color = newColor;
     }
 

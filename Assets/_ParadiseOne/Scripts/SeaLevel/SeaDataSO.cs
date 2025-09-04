@@ -26,6 +26,9 @@ public class SeaDataSO : ScriptableObject
 
     
     [field: Header("FISHES")]
+    [field: Header("Fish")]
+    [field: SerializeField,Range(0.1f,1.0f)] public float FishBaseOpacity { get; private set; } = 0.7f;
+
     [field: Header("Oursin")]
     [field: SerializeField, Tooltip("In seconds")]
     public float OursinLifeTime { get; private set; } = 5;
