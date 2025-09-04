@@ -22,6 +22,7 @@ public class SeaDataSO : ScriptableObject
     public List<SeaEventsEnum> Events { get; private set; } = new List<SeaEventsEnum>();
     [field: SerializeField] public float FishSpeedMultiplier { get; private set; } = 1.5f;
     [field: SerializeField] public float FishScaleMultiplier { get; private set; } = 1.35f;
+    [field: SerializeField,Range(0.1f,1.0f)] public float FishLessVisibleOpacity { get; private set; } = 0.35f;
 
     
     [field: Header("FISHES")]

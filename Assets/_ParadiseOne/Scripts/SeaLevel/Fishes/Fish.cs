@@ -5,7 +5,9 @@ using UnityEngine;
 public abstract class Fish : MonoBehaviour, IFish
 {
     #region Properties
-    [Header("Fish References")]
+
+    [Header("Fish References")] 
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private SeaTimer _fishLifeTimer;
     
     public int Score { get; protected set; } = 10;
@@ -86,6 +88,23 @@ public abstract class Fish : MonoBehaviour, IFish
     public virtual void BeSlow()
     {
         _speed = _originalSpeed;
+    }
+    #endregion
+
+    #region Fish Visibility
+
+    public void BeVisible()
+    {
+        Color newColor = _spriteRenderer.color;
+        newColor.a = 1f;
+        _spriteRenderer.color = newColor;
+    }
+
+    public void BeNotVisible(float alpha)
+    {
+        Color newColor = _spriteRenderer.color;
+        newColor.a = alpha;
+        _spriteRenderer.color = newColor;
     }
     #endregion
 }
