@@ -1,21 +1,26 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SeaFishSpawner : MonoBehaviour
 {
     #region Fields
-    [SerializeField] private List<Transform> _fishSpawnPoints;
-    [SerializeField] private List<Fish> _fishes;
-    #endregion
 
-    private void Start()
-    {
-        foreach (Fish fish in _fishes)
-        {
-            fish.FishCollected += OnFishCollected;
-        }
-    }
+    private SeaDataSO _seaDataSO;
+    
+    private List<Fish> _fishes = new List<Fish>();
+
+    //Spawning
+    private Camera _seaLevelCamera;
+    private Rect _spawningZone;
+
+    [SerializeField] private SeaTimer _spawningTimer;
+    private float _spawningInterval = 5;
+    private int _maxNumberOfFish;
+
+    [SerializeField] private List<GameObject> _fishesPrefab;
+    #endregion
 
     #region Actions
 
@@ -23,12 +28,142 @@ public class SeaFishSpawner : MonoBehaviour
 
     #endregion
 
+    #region Spawner LifeCycle
+
+    private void SetupSpawningZone()
+    {
+        float height = _seaLevelCamera.orthographicSize * 2;
+        float width = height * _seaLevelCamera.aspect;
+        Vector2 spawningZoneSize = new Vector2(width, height);
+        
+        Vector2 spawningZonePosition = new Vector2(_seaLevelCamera.transform.position.x - width / 2,
+            _seaLevelCamera.transform.position.y - height / 2);
+        
+        _spawningZone = new Rect(spawningZonePosition, spawningZoneSize);
+    }
+
+    public void InitSeaFishSpawner(SeaDataSO seaDataSo)
+    {
+        if (seaDataSo == null)
+        {
+            Debug.LogError("SeaFishSpawner : SeaDataSO is NULL");
+            return;
+        }
+        _seaDataSO = seaDataSo;
+
+        _maxNumberOfFish = _seaDataSO.MaxNumberOfFishes;
+        _spawningInterval = _seaDataSO.SpawningInterval;
+        
+        // Setup of spawning zone;
+
+        _seaLevelCamera = Camera.main;
+
+        if (_seaLevelCamera == null)
+        {
+            Debug.LogError("NO MAIN CAMERA");
+        }
+        
+        SetupSpawningZone();
+        
+        _spawningTimer.InitTimer(_spawningInterval, true);
+
+        _spawningTimer.SeaTimerElapsed += OnSpawningTimerElasped;
+    }
+
+    public void StartSpawner()
+    {
+        _spawningTimer.StartTimer();
+    }
+
+    public void StopSpawner()
+    {
+        _spawningTimer.StopTimer();
+        
+        for (int i = 0; i < _fishes.Count; )
+        {
+            _fishes[i].KillFish();
+        }
+    }
+    #endregion
+
+    #region SpawnManagement
+    private void SpawnFish()
+    {
+        if(_fishes.Count >= _maxNumberOfFish) return;
+        
+        //Debug.LogWarning("SpawnFish");
+        
+        //Find random point on map
+        float minX = _spawningZone.center.x - _spawningZone.size.x / 2;
+        float maxX = _spawningZone.center.x + _spawningZone.size.x / 2;
+        float spawningX = Random.Range(minX, maxX);
+        
+        float minY = _spawningZone.center.y - _spawningZone.size.y / 2;
+        float maxY = _spawningZone.center.y + _spawningZone.size.y / 2;
+        float spawningY = Random.Range(minY, maxY);
+
+        Vector2 spawningPosition = new Vector2(spawningX, spawningY);
+        
+        //Spawn Fish (first with prefab)
+
+        GameObject prefabToSpawn = _fishesPrefab[Random.Range(0, _fishesPrefab.Count)];
+        
+        GameObject fishGO = GameObject.Instantiate(prefabToSpawn, spawningPosition, Quaternion.Euler(0,0, Random.Range(0f, 360f)), this.transform);
+        Fish fish = fishGO.GetComponent<Fish>();
+
+        if (fish == null)
+        {
+            Debug.LogError("Fish object spawned doesn't have a Fish component");
+        }
+
+        AddFish(fish);
+        
+        fish.InitFish(_seaDataSO);
+        fish.StartFishLife();
+    }
+
+    private void AddFish(Fish fish)
+    {
+        _fishes.Add(fish);
+        fish.FishCollected += OnFishCollected;
+        fish.FishDied += OnFishDied;
+    }
+
+    private void RemoveFish(Fish fish)
+    {
+        fish.FishCollected -= OnFishCollected;
+        fish.FishDied -= OnFishDied;
+        _fishes.Remove(fish);
+    }
+    #endregion
+
+    
+    #region React To SpawningTimer Events
+
+
+    private void OnSpawningTimerElasped()
+    {
+        SpawnFish();
+    }
+    #endregion
+    
     #region React To Fish Event
 
     private void OnFishCollected(PlayerEnum collector, int scoreToAdd)
     {
         SpawnedFishCollected?.Invoke(collector, scoreToAdd);
     }
-    
+
+    private void OnFishDied(Fish deadFish)
+    {
+        RemoveFish(deadFish);
+    }
     #endregion
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        
+        Gizmos.DrawWireCube(_spawningZone.center, _spawningZone.size);
+    }
 }
