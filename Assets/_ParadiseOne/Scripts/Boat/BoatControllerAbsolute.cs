@@ -5,13 +5,13 @@ using UnityEngine.InputSystem;
 public class BoatControllerAbsolute : MonoBehaviour
 {
     [SerializeField] private InputActionReference _input;
-    [SerializeField] private float _acceleration;
 
     private Rigidbody2D _rb;
     private Vector2 _inputVector;
     private Vector2 _currentVelocity;
 
     public bool IsActive { get; set; }
+    public float Acceleration;
     public float MaxSpeed;
     public float TurnSpeed;
 
@@ -34,7 +34,7 @@ public class BoatControllerAbsolute : MonoBehaviour
         if (!IsActive)
             return;
 
-        _currentVelocity += (Vector2)transform.up * (_acceleration * Time.fixedDeltaTime);
+        _currentVelocity += (Vector2)transform.up * (Acceleration * Time.fixedDeltaTime);
 
         if (_currentVelocity.magnitude > MaxSpeed)
             _currentVelocity = _currentVelocity.normalized * MaxSpeed;

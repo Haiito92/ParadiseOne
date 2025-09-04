@@ -488,6 +488,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1413094356893930834, guid: c3e4d2e12886fa94d83738094701da2c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -567738520175181779, guid: e6d6348160a56ff43a5ef3d9cf6b4f7f, type: 3}
+    - target: {fileID: 1743591369396633027, guid: c3e4d2e12886fa94d83738094701da2c, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743591369396633027, guid: c3e4d2e12886fa94d83738094701da2c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 60a2d0cff74f27943974d8166f4c447c, type: 2}
+    - target: {fileID: 1743591369396633027, guid: c3e4d2e12886fa94d83738094701da2c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -9030480703853380363, guid: 60a2d0cff74f27943974d8166f4c447c, type: 2}
+    - target: {fileID: 1743591369396633027, guid: c3e4d2e12886fa94d83738094701da2c, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743591369396633027, guid: c3e4d2e12886fa94d83738094701da2c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348533573209205764, guid: c3e4d2e12886fa94d83738094701da2c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 339.191
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348533573209205764, guid: c3e4d2e12886fa94d83738094701da2c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 167.694
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348533573209205764, guid: c3e4d2e12886fa94d83738094701da2c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000045776
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348533573209205764, guid: c3e4d2e12886fa94d83738094701da2c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0000076294
+      objectReference: {fileID: 0}
     - target: {fileID: 2626072757587717674, guid: c3e4d2e12886fa94d83738094701da2c, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas
