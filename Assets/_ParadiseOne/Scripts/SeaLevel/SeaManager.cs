@@ -8,6 +8,7 @@ public class SeaManager : MonoBehaviour
     #region Fields
     [Header("Sea Level Manager Setup")]
     [SerializeField] private SeaDataSO _seaDataSO;
+    [SerializeField] private SeaAudiosSO _seaAudiosSO;
     [SerializeField] private SeaFishSpawner _seaFishSpawner;
     [SerializeField] private SeaEventRandomizer _seaEventRandomizer;
     #endregion
@@ -31,7 +32,7 @@ public class SeaManager : MonoBehaviour
     {
         SeaTimer.InitTimer(_seaDataSO.SeaGameLength);
         
-        _seaEventRandomizer.InitSeaEventRandomizer(_seaDataSO);
+        _seaEventRandomizer.InitSeaEventRandomizer(_seaDataSO, _seaAudiosSO);
         _seaEventRandomizer.EventStarted += OnSeaEventStarted;
         _seaEventRandomizer.EventStopped += OnSeaEventStopped;
         

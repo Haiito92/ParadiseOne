@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7a8bc8b61efec47b977552b76dd7ea, type: 3}
+  m_Name: SeaAudiosSO
+  m_EditorClassIdentifier: 
+  <NewEventSound>k__BackingField: {fileID: 8300000, guid: 331dac3726de6d14e834334bcb611ca0, type: 3}
+  <BoatCollisionWithBoatSound>k__BackingField: {fileID: 8300000, guid: b065a69ddd49f8b458a79542d68bbc6e, type: 3}
+  <BoatCollisionWithObstacleSound>k__BackingField: {fileID: 8300000, guid: ce1e52f0ab1583743a6ee92a7ae8fe3b, type: 3}
+  <BoostSound>k__BackingField: {fileID: 8300000, guid: 02b49e1c9cce3fd45ac1f1ab4b39031d, type: 3}

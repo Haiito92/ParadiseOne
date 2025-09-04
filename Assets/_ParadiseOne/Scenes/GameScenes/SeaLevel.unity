@@ -1858,6 +1858,14 @@ PrefabInstance:
       propertyPath: _playerTwoBoat
       value: 
       objectReference: {fileID: 185049148}
+    - target: {fileID: 831318430739227416, guid: fc01da86bf3ce6d40b950c938764ec1a, type: 3}
+      propertyPath: _playerOneBoostController
+      value: 
+      objectReference: {fileID: 1768712260}
+    - target: {fileID: 831318430739227416, guid: fc01da86bf3ce6d40b950c938764ec1a, type: 3}
+      propertyPath: _playerTwoBoostController
+      value: 
+      objectReference: {fileID: 841426661}
     - target: {fileID: 7933397763958108306, guid: fc01da86bf3ce6d40b950c938764ec1a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

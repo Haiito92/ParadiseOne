@@ -12,6 +12,8 @@ public class SeaEventRandomizer : MonoBehaviour
 
     private List<SeaEventsEnum> _allEvents = new List<SeaEventsEnum>();
     public SeaEventsEnum CurrentEvent { get; private set; }
+
+    private AudioClip _newEventSound;
     #endregion
 
     #region Actions
@@ -21,7 +23,7 @@ public class SeaEventRandomizer : MonoBehaviour
 
     #endregion    
 
-    public void InitSeaEventRandomizer(SeaDataSO seaDataSo)
+    public void InitSeaEventRandomizer(SeaDataSO seaDataSo, SeaAudiosSO seaAudiosSo)
     {
         _eventLength = seaDataSo.EventLength;
 
@@ -30,6 +32,8 @@ public class SeaEventRandomizer : MonoBehaviour
         
         _eventTimer.InitTimer(_eventLength, true);
         _eventTimer.SeaTimerElapsed += OnEventTimerElapsed;
+
+        _newEventSound = seaAudiosSo.NewEventSound;
     }
 
     public void StartSeaEventRandomizer()
@@ -52,6 +56,7 @@ public class SeaEventRandomizer : MonoBehaviour
         CurrentEvent = _allEvents[randomIndex];
 
         EventStarted?.Invoke(CurrentEvent);
+        AudioManager.Instance?.PlaySound2D(_newEventSound);
         
         Debug.LogWarning($"New event is : {CurrentEvent}");
     }
