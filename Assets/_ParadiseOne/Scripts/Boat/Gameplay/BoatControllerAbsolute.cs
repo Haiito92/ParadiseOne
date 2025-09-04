@@ -10,6 +10,7 @@ public class BoatControllerAbsolute : MonoBehaviour
     private Rigidbody2D _rb;
     private Vector2 _inputVector;
     private Vector2 _currentDirrection;
+    private bool _isInputInverted;
 
     public bool IsActive { get; set; }
     public float Acceleration;
@@ -58,11 +59,18 @@ public class BoatControllerAbsolute : MonoBehaviour
     private void OnInputPerformed(InputAction.CallbackContext ctx)
     {
         _inputVector = ctx.ReadValue<Vector2>();
+
+        if (_isInputInverted)
+            _inputVector = -_inputVector;
     }
 
     private void OnInputCanceled(InputAction.CallbackContext ctx)
     {
         _inputVector = Vector2.zero;
+    }
+    public void SetInvertedInputs(bool inverted)
+    {
+        _isInputInverted = inverted;
     }
 
     //// FOR TESTS PURPOSES ONLY. DO NOT CALL THOSE FUNCTIONS FROM OTHER SCRIPTS OR EVEN IN THIS ONE. ////
