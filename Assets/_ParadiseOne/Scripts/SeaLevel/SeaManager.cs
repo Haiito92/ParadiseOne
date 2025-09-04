@@ -29,11 +29,12 @@ public class SeaManager : MonoBehaviour
     {
         SeaTimer.InitTimer(_seaDataSO.SeaGameLength);
         
-        _seaFishSpawner.InitSeaFishSpawner(_seaDataSO);
         _seaEventRandomizer.InitSeaEventRandomizer(_seaDataSO);
-
         _seaEventRandomizer.EventStarted += OnSeaEventStarted;
         _seaEventRandomizer.EventStopped += OnSeaEventStopped;
+        
+        _seaFishSpawner.InitSeaFishSpawner(_seaDataSO, _seaEventRandomizer);
+
     }
 
     private void Start()
@@ -96,10 +97,13 @@ public class SeaManager : MonoBehaviour
         switch (eventType)
         {
             case SeaEventsEnum.Undefined:
+                //Debug.LogError("Received Undefined Event");
                 break;
             case SeaEventsEnum.FastFish:
+                _seaFishSpawner.AllFishFast();
                 break;
             case SeaEventsEnum.BigFish:
+                _seaFishSpawner.AllFishBig();
                 break;
             case SeaEventsEnum.CloudyWater:
                 break;
@@ -108,6 +112,7 @@ public class SeaManager : MonoBehaviour
             case SeaEventsEnum.UnlimitedBoost:
                 break;
             default:
+                //Debug.LogError("Received default (undefined) Event");
                 break;
         }
     }
@@ -117,10 +122,13 @@ public class SeaManager : MonoBehaviour
         switch (eventType)
         {
             case SeaEventsEnum.Undefined:
+                //Debug.LogError("Received Undefined Event");
                 break;
             case SeaEventsEnum.FastFish:
+                _seaFishSpawner.AllFishSlow();
                 break;
             case SeaEventsEnum.BigFish:
+                _seaFishSpawner.AllFishSmall();
                 break;
             case SeaEventsEnum.CloudyWater:
                 break;
@@ -129,6 +137,7 @@ public class SeaManager : MonoBehaviour
             case SeaEventsEnum.UnlimitedBoost:
                 break;
             default:
+                //Debug.LogError("Received default (undefined) Event");
                 break;
         }
     }

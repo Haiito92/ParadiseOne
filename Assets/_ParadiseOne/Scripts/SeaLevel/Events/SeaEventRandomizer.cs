@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class SeaEventRandomizer : MonoBehaviour
@@ -10,7 +11,7 @@ public class SeaEventRandomizer : MonoBehaviour
     private float _eventLength;
 
     private List<SeaEventsEnum> _allEvents = new List<SeaEventsEnum>();
-    private SeaEventsEnum _currentEvent;
+    public SeaEventsEnum CurrentEvent { get; private set; }
     #endregion
 
     #region Actions
@@ -25,7 +26,7 @@ public class SeaEventRandomizer : MonoBehaviour
         _eventLength = seaDataSo.EventLength;
 
         _allEvents = seaDataSo.Events;
-        _currentEvent = SeaEventsEnum.Undefined;
+        CurrentEvent = SeaEventsEnum.Undefined;
         
         _eventTimer.InitTimer(_eventLength, true);
         _eventTimer.SeaTimerElapsed += OnEventTimerElapsed;
@@ -44,15 +45,15 @@ public class SeaEventRandomizer : MonoBehaviour
     #region React to Event Timer
     private void OnEventTimerElapsed()
     {
-        EventStopped?.Invoke(_currentEvent);
+        EventStopped?.Invoke(CurrentEvent);
 
         int randomIndex = Random.Range(0, _allEvents.Count);
 
-        _currentEvent = _allEvents[randomIndex];
+        CurrentEvent = _allEvents[randomIndex];
 
-        EventStarted?.Invoke(_currentEvent);
+        EventStarted?.Invoke(CurrentEvent);
         
-        //Debug.LogWarning($"New event is : {_currentEvent}");
+        Debug.LogWarning($"New event is : {CurrentEvent}");
     }
     #endregion
 }

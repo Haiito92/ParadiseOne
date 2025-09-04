@@ -7,7 +7,6 @@ public class Vivano : Fish
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private SeaTimer _changeDirectionTimer;
     
-    private float _speed;
     private float _changeDirectionInterval;
     private Vector2 _swimmingDirection;
 
@@ -48,6 +47,7 @@ public class Vivano : Fish
         _fishLifeTime = seaDataSo.VivanoLifeTime;
         Score = seaDataSo.VivanoScore;
 
+        _originalSpeed = seaDataSo.VivanoSpeed;
         _speed = seaDataSo.VivanoSpeed;
         _changeDirectionInterval = seaDataSo.VivanoChangeDirectionInterval;
     }
@@ -62,6 +62,20 @@ public class Vivano : Fish
         _changeDirectionTimer.SeaTimerElapsed += OnChangeDirectionTimerElapsed;
         
         _changeDirectionTimer.StartTimer();
+    }
+
+    public override void BeFast(float speedMultiplier)
+    {
+        base.BeFast(speedMultiplier);
+        
+        _rigidbody.linearVelocity = _swimmingDirection * _speed * Time.fixedDeltaTime;
+    }
+
+    public override void BeSlow()
+    {
+        base.BeSlow();
+        
+        _rigidbody.linearVelocity = _swimmingDirection * _speed * Time.fixedDeltaTime;
     }
 
     #endregion
