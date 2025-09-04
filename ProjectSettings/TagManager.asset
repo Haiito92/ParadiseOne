@@ -41,5 +41,23 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3166258459
+    locked: 0
+  - name: Fishes
+    uniqueID: 1133167073
+    locked: 0
+  - name: Middleground
+    uniqueID: 4055796413
+    locked: 0
+  - name: FishingNet
+    uniqueID: 2817285381
+    locked: 0
+  - name: Obstacles
+    uniqueID: 1556838847
+    locked: 0
+  - name: Boat
+    uniqueID: 453542221
+    locked: 0
   m_RenderingLayers:
   - Default
