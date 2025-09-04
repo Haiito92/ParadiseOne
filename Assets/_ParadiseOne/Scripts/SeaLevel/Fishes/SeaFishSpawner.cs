@@ -8,6 +8,7 @@ public class SeaFishSpawner : MonoBehaviour
     #region Fields
 
     private SeaDataSO _seaDataSO;
+    private SeaEventRandomizer _seaEventRandomizer;
     
     private List<Fish> _fishes = new List<Fish>();
 
@@ -42,14 +43,21 @@ public class SeaFishSpawner : MonoBehaviour
         _spawningZone = new Rect(spawningZonePosition, spawningZoneSize);
     }
 
-    public void InitSeaFishSpawner(SeaDataSO seaDataSo)
+    public void InitSeaFishSpawner(SeaDataSO seaDataSo, SeaEventRandomizer seaEventRandomizer)
     {
         if (seaDataSo == null)
         {
             Debug.LogError("SeaFishSpawner : SeaDataSO is NULL");
             return;
         }
+        if (seaEventRandomizer == null)
+        {
+            Debug.LogError("SeaFishSpawner : SeaEventRandomizer is NULL");
+            return;
+        }
+        
         _seaDataSO = seaDataSo;
+        _seaEventRandomizer = seaEventRandomizer;
 
         _maxNumberOfFish = _seaDataSO.MaxNumberOfFishes;
         _spawningInterval = _seaDataSO.SpawningInterval;
@@ -121,6 +129,15 @@ public class SeaFishSpawner : MonoBehaviour
         
         fish.InitFish(_seaDataSO);
         fish.StartFishLife();
+
+        if (_seaEventRandomizer.CurrentEvent == SeaEventsEnum.BigFish)
+        {
+            fish.BeBig(_seaDataSO.FishScaleMultiplier);
+        }
+        else if (_seaEventRandomizer.CurrentEvent == SeaEventsEnum.FastFish)
+        {
+            fish.BeFast(_seaDataSO.FishSpeedMultiplier);
+        }
     }
 
     private void AddFish(Fish fish)
@@ -135,6 +152,38 @@ public class SeaFishSpawner : MonoBehaviour
         fish.FishCollected -= OnFishCollected;
         fish.FishDied -= OnFishDied;
         _fishes.Remove(fish);
+    }
+
+    public void AllFishBig()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            fish.BeBig(_seaDataSO.FishScaleMultiplier);
+        }
+    }
+
+    public void AllFishSmall()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            fish.BeSmall();
+        }
+    }
+
+    public void AllFishFast()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            fish.BeFast(_seaDataSO.FishSpeedMultiplier);
+        }
+    }
+
+    public void AllFishSlow()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            fish.BeSlow();
+        }
     }
     #endregion
 
