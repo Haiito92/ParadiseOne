@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 41d21a12314eab544bcce22b593fe15f
+guid: b45105cebf9d88d4da4b6ccaaf2a983d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -567738520175181779
-    second: Sea LAYER 02_0
+      213: -5785741527840695721
+    second: Rochers RE FIXED 03_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sea LAYER 02_0
+      name: Rochers RE FIXED 03_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 54
+        y: 54
+        width: 416
+        height: 373
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2007abe2dcfe18f0800000000000000
-      internalID: -567738520175181779
+      spriteID: 75a54de0cbae4bfa0800000000000000
+      internalID: -5785741527840695721
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sea LAYER 02_0: -567738520175181779
+      Rochers RE FIXED 03_0: -5785741527840695721
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

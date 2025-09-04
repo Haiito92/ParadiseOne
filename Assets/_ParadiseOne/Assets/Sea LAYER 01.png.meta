@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ff9af2e22a6130d41b63f3b02000b50f
+guid: bc48e101de149464e9c962463fc51ab2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1506447559792536727
-    second: "Sea background L\xE9o DONE 01_0"
+      213: 5861665529814873941
+    second: Sea LAYER 01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Sea background L\xE9o DONE 01_0"
+      name: Sea LAYER 01_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79c203af21af7e410800000000000000
-      internalID: 1506447559792536727
+      spriteID: 55774c03eb1d85150800000000000000
+      internalID: 5861665529814873941
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Sea background L\xE9o DONE 01_0": 1506447559792536727
+      Sea LAYER 01_0: 5861665529814873941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
