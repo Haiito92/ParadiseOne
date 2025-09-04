@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ff9af2e22a6130d41b63f3b02000b50f
+guid: 363d94728e282934095beb88f07329ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1506447559792536727
-    second: "Sea background L\xE9o DONE 01_0"
+      213: -4966113606236600968
+    second: Oursin_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Sea background L\xE9o DONE 01_0"
+      name: Oursin_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 495
+        height: 485
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79c203af21af7e410800000000000000
-      internalID: 1506447559792536727
+      spriteID: 875880a9cf1d41bb0800000000000000
+      internalID: -4966113606236600968
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Sea background L\xE9o DONE 01_0": 1506447559792536727
+      Oursin_0: -4966113606236600968
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
