@@ -52,7 +52,7 @@ public class SeaEventRandomizer : MonoBehaviour
 
         EventStarted?.Invoke(_currentEvent);
         
-        Debug.LogWarning($"New event is : {_currentEvent}");
+        //Debug.LogWarning($"New event is : {_currentEvent}");
     }
     #endregion
 }

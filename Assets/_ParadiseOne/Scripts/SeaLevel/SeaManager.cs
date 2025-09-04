@@ -31,6 +31,9 @@ public class SeaManager : MonoBehaviour
         
         _seaFishSpawner.InitSeaFishSpawner(_seaDataSO);
         _seaEventRandomizer.InitSeaEventRandomizer(_seaDataSO);
+
+        _seaEventRandomizer.EventStarted += OnSeaEventStarted;
+        _seaEventRandomizer.EventStopped += OnSeaEventStopped;
     }
 
     private void Start()
@@ -86,9 +89,49 @@ public class SeaManager : MonoBehaviour
     }
     #endregion
 
-    //TODO REMOVE THIS SECTION
-    #region Test Functions
-    [Button]
-    public void TestStartSeaGame() => StartSeaGame();
+    #region React To SeaEventRandomizer Events
+
+    private void OnSeaEventStarted(SeaEventsEnum eventType)
+    {
+        switch (eventType)
+        {
+            case SeaEventsEnum.Undefined:
+                break;
+            case SeaEventsEnum.FastFish:
+                break;
+            case SeaEventsEnum.BigFish:
+                break;
+            case SeaEventsEnum.CloudyWater:
+                break;
+            case SeaEventsEnum.InvertedControls:
+                break;
+            case SeaEventsEnum.UnlimitedBoost:
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void OnSeaEventStopped(SeaEventsEnum eventType)
+    {
+        switch (eventType)
+        {
+            case SeaEventsEnum.Undefined:
+                break;
+            case SeaEventsEnum.FastFish:
+                break;
+            case SeaEventsEnum.BigFish:
+                break;
+            case SeaEventsEnum.CloudyWater:
+                break;
+            case SeaEventsEnum.InvertedControls:
+                break;
+            case SeaEventsEnum.UnlimitedBoost:
+                break;
+            default:
+                break;
+        }
+    }
+
     #endregion
 }
