@@ -1729,10 +1729,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 34249692}
     m_Modifications:
-    - target: {fileID: 957091696727502085, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1445196948112846936, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: _boostController
       value: 
@@ -1817,22 +1813,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2214577672981590239, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 232
-      objectReference: {fileID: 0}
-    - target: {fileID: 2214577672981590239, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 230
-      objectReference: {fileID: 0}
-    - target: {fileID: 2214577672981590239, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000015259
-      objectReference: {fileID: 0}
-    - target: {fileID: 2214577672981590239, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.00012207031
-      objectReference: {fileID: 0}
     - target: {fileID: 3271259951953345657, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1845,86 +1825,20 @@ PrefabInstance:
       propertyPath: _seaManager
       value: 
       objectReference: {fileID: 3642295889181157953}
-    - target: {fileID: 3750664572211261093, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: _boostController
-      value: 
-      objectReference: {fileID: 841426661}
     - target: {fileID: 4193353442842030039, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6015284865230507931, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6108862700073472309, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6413877917803489320, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6825929962645398926, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: _boostController
-      value: 
-      objectReference: {fileID: 1768712260}
     - target: {fileID: 6938333992072695774, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_Name
       value: SeaLevelCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 7059850643202806053, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_Colors.m_PressedColor.b
-      value: 0.5254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 7059850643202806053, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_Colors.m_PressedColor.g
-      value: 0.5254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 7059850643202806053, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_Colors.m_PressedColor.r
-      value: 0.5254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 7059850643202806053, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.b
-      value: 0.5254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 7059850643202806053, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.g
-      value: 0.5254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 7059850643202806053, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.r
-      value: 0.5254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 7059850643202806053, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.7764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 7059850643202806053, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.7764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 7059850643202806053, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.7764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 7059850643202806053, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3642295889181157953}
-    - target: {fileID: 7466206676647523603, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: _boostController
-      value: 
-      objectReference: {fileID: 841426661}
-    - target: {fileID: 7892219830460318432, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 7955766743341230339, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
-    - {fileID: 5282752478518666069, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
