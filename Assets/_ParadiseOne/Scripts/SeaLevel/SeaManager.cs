@@ -115,8 +115,8 @@ public class SeaManager : MonoBehaviour
                 _playerTwoBoat.SetInvertedInputs(true);
                 break;
             case SeaEventsEnum.UnlimitedBoost:
-                _playerOneBoostController.SetInfiniteBoost(true);
-                _playerTwoBoostController.SetInfiniteBoost(true);
+                _playerOneBoostController.InfiniteBoostOn();
+                _playerTwoBoostController.InfiniteBoostOn();
                 break;
             default:
                 //Debug.LogError("Received default (undefined) Event");
@@ -145,8 +145,8 @@ public class SeaManager : MonoBehaviour
                 _playerTwoBoat.SetInvertedInputs(false);
                 break;
             case SeaEventsEnum.UnlimitedBoost:
-                _playerOneBoostController.SetInfiniteBoost(false);
-                _playerTwoBoostController.SetInfiniteBoost(false);
+                _playerOneBoostController.InfiniteBoostOff();
+                _playerTwoBoostController.InfiniteBoostOff();
                 break;
             default:
                 //Debug.LogError("Received default (undefined) Event");
