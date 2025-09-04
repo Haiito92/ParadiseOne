@@ -21,14 +21,14 @@ public class BoatControllerAbsolute : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
 
-        _input.action.performed += OnInputPerformed;
-        _input.action.canceled += OnInputCanceled;
+        _input.action.performed += InputPerformed;
+        _input.action.canceled += InputCanceled;
     }
 
     private void OnDestroy()
     {
-        _input.action.performed -= OnInputPerformed;
-        _input.action.canceled -= OnInputCanceled;
+        _input.action.performed -= InputPerformed;
+        _input.action.canceled -= InputCanceled;
     }
 
     private void FixedUpdate()
@@ -56,7 +56,7 @@ public class BoatControllerAbsolute : MonoBehaviour
         _animator.SetBoatSprite(_currentDirrection);
     }
 
-    private void OnInputPerformed(InputAction.CallbackContext ctx)
+    private void InputPerformed(InputAction.CallbackContext ctx)
     {
         _inputVector = ctx.ReadValue<Vector2>();
 
@@ -64,26 +64,28 @@ public class BoatControllerAbsolute : MonoBehaviour
             _inputVector = -_inputVector;
     }
 
-    private void OnInputCanceled(InputAction.CallbackContext ctx)
+    private void InputCanceled(InputAction.CallbackContext ctx)
     {
         _inputVector = Vector2.zero;
     }
-    public void SetInvertedInputs(bool inverted)
-    {
-        _isInputInverted = inverted;
-    }
 
-    //// FOR TESTS PURPOSES ONLY. DO NOT CALL THOSE FUNCTIONS FROM OTHER SCRIPTS OR EVEN IN THIS ONE. ////
-
-    [Button]
     public void StartBoat()
     {
         IsActive = true;
     }
 
-    [Button]
     public void StopBoat()
     {
         IsActive = false;
+    }
+
+    public void InvertedInputsOn()
+    {
+        _isInputInverted = true;
+    }
+
+    public void InvertedInputsOff()
+    {
+        _isInputInverted = false;
     }
 }

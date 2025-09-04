@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,7 +18,7 @@ public class BoatBoostController : MonoBehaviour
     private float _baseTurnSpeed;
     private float _currentBoostGauge;
     private bool _isBoosting;
-    private bool _infiniteBoost;
+    private bool _isInfiniteBoost;
 
     public float CurrentBoostRatio => _currentBoostGauge / _maxDurationBoost;
     public float MinGaugeToBoost => _minGaugeToBoost;
@@ -31,14 +32,14 @@ public class BoatBoostController : MonoBehaviour
 
         _currentBoostGauge = _maxDurationBoost;
 
-        _input.action.performed += OnInputPerformed;
-        _input.action.canceled += OnInputCanceled;
+        _input.action.performed += InputPerformed;
+        _input.action.canceled += InputCanceled;
     }
 
     private void OnDestroy()
     {
-        _input.action.performed -= OnInputPerformed;
-        _input.action.canceled -= OnInputCanceled;
+        _input.action.performed -= InputPerformed;
+        _input.action.canceled -= InputCanceled;
     }
 
     private void FixedUpdate()
@@ -54,7 +55,7 @@ public class BoatBoostController : MonoBehaviour
     {
         if (_isBoosting)
         {
-            if (!_infiniteBoost)
+            if (!_isInfiniteBoost)
             {
                 _currentBoostGauge -= Time.fixedDeltaTime;
                 if (_currentBoostGauge <= 0f)
@@ -63,42 +64,42 @@ public class BoatBoostController : MonoBehaviour
                     _isBoosting = false;
                 }
             }
-        }
-        else
-        {
-            if (!_infiniteBoost)
+            else
             {
                 if (_currentBoostGauge < _maxDurationBoost)
                     _currentBoostGauge += _rechargeRate * Time.fixedDeltaTime;
-
-                if (_currentBoostGauge > _maxDurationBoost)
-                    _currentBoostGauge = _maxDurationBoost;
             }
         }
+        else
+        {
+            if (_currentBoostGauge < _maxDurationBoost)
+                _currentBoostGauge += _rechargeRate * Time.fixedDeltaTime;
+
+            if (_currentBoostGauge > _maxDurationBoost)
+                _currentBoostGauge = _maxDurationBoost;
+        }
     }
 
-    private void OnInputPerformed(InputAction.CallbackContext ctx)
+    private void InputPerformed(InputAction.CallbackContext ctx)
     {
-        if (!_isBoosting && (_currentBoostGauge >= _maxDurationBoost * _minGaugeToBoost || _infiniteBoost))
+        if (!_isBoosting && (_currentBoostGauge >= _maxDurationBoost * _minGaugeToBoost))
         {
             _isBoosting = true;
         }
     }
 
-    private void OnInputCanceled(InputAction.CallbackContext ctx)
+    private void InputCanceled(InputAction.CallbackContext ctx)
     {
-        if (!_infiniteBoost)
-            _isBoosting = false;
+        _isBoosting = false;
     }
 
-    public void SetInfiniteBoost(bool infinite)
+    public void InfiniteBoostOn()
     {
-        _infiniteBoost = infinite;
+        _isInfiniteBoost = true;
+    }
 
-        if (_infiniteBoost)
-        {
-            _currentBoostGauge = _maxDurationBoost;
-            _isBoosting = true;
-        }
+    public void InfiniteBoostOff()
+    {
+        _isInfiniteBoost = false;
     }
 }
