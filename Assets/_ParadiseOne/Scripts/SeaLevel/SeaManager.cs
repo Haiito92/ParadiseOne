@@ -18,6 +18,8 @@ public class SeaManager : MonoBehaviour
 
     [SerializeField] private BoatControllerAbsolute _playerOneBoat;
     [SerializeField] private BoatControllerAbsolute _playerTwoBoat;
+    [SerializeField] private BoatBoostController _playerOneBoostController;
+    [SerializeField] private BoatBoostController _playerTwoBoostController;
     #endregion
 
     #region Actions
@@ -108,8 +110,12 @@ public class SeaManager : MonoBehaviour
             case SeaEventsEnum.CloudyWater:
                 break;
             case SeaEventsEnum.InvertedControls:
+                _playerOneBoat.SetInvertedInputs(true);
+                _playerTwoBoat.SetInvertedInputs(true);
                 break;
             case SeaEventsEnum.UnlimitedBoost:
+                _playerOneBoostController.SetInfiniteBoost(true);
+                _playerTwoBoostController.SetInfiniteBoost(true);
                 break;
             default:
                 //Debug.LogError("Received default (undefined) Event");
@@ -133,8 +139,12 @@ public class SeaManager : MonoBehaviour
             case SeaEventsEnum.CloudyWater:
                 break;
             case SeaEventsEnum.InvertedControls:
+                _playerOneBoat.SetInvertedInputs(false);
+                _playerTwoBoat.SetInvertedInputs(false);
                 break;
             case SeaEventsEnum.UnlimitedBoost:
+                _playerOneBoostController.SetInfiniteBoost(false);
+                _playerTwoBoostController.SetInfiniteBoost(false);
                 break;
             default:
                 //Debug.LogError("Received default (undefined) Event");
