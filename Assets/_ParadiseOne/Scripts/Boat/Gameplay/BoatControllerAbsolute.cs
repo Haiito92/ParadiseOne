@@ -9,7 +9,7 @@ public class BoatControllerAbsolute : MonoBehaviour
 
     private Rigidbody2D _rb;
     private Vector2 _inputVector;
-    private Vector2 _currentVelocity;
+    private Vector2 _currentDirrection;
 
     public bool IsActive { get; set; }
     public float Acceleration;
@@ -35,12 +35,12 @@ public class BoatControllerAbsolute : MonoBehaviour
         if (!IsActive)
             return;
 
-        _currentVelocity += (Vector2)transform.up * (Acceleration * Time.fixedDeltaTime);
+        _currentDirrection += (Vector2)transform.up * (Acceleration * Time.fixedDeltaTime);
 
-        if (_currentVelocity.magnitude > MaxSpeed)
-            _currentVelocity = _currentVelocity.normalized * MaxSpeed;
+        if (_currentDirrection.magnitude > MaxSpeed)
+            _currentDirrection = _currentDirrection.normalized * MaxSpeed;
 
-        _rb.MovePosition(_rb.position + _currentVelocity * Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position + _currentDirrection * Time.fixedDeltaTime);
 
         if (_inputVector.sqrMagnitude > 0.01f)
         {
@@ -52,7 +52,7 @@ public class BoatControllerAbsolute : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetBoatSprite(_currentVelocity);
+        _animator.SetBoatSprite(_currentDirrection);
     }
 
     private void OnInputPerformed(InputAction.CallbackContext ctx)
