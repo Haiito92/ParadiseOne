@@ -109,6 +109,7 @@ public class SeaFishSpawner : MonoBehaviour
         GameObject prefabToSpawn = _fishesPrefab[Random.Range(0, _fishesPrefab.Count)];
         
         GameObject fishGO = GameObject.Instantiate(prefabToSpawn, spawningPosition, Quaternion.Euler(0,0, Random.Range(0f, 360f)), this.transform);
+        
         Fish fish = fishGO.GetComponent<Fish>();
 
         if (fish == null)
