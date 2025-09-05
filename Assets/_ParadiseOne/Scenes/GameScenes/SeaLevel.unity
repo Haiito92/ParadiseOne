@@ -1755,6 +1755,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 5321877411749566947, guid: a82b4cd9dac52f9419b0af92a5423225, type: 3}
+    - target: {fileID: 5359720603983197667, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: _eventSprites._serializedList.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 21300000, guid: 52834d1eb984ba64f98fbeb595490bd4, type: 3}
+    - target: {fileID: 5359720603983197667, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: _eventSprites._serializedList.Array.data[1].Value
+      value: 
+      objectReference: {fileID: 21300000, guid: 8e2270bd3ac1b7644ad73c3961bbc238, type: 3}
+    - target: {fileID: 5359720603983197667, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: _eventSprites._serializedList.Array.data[2].Value
+      value: 
+      objectReference: {fileID: 21300000, guid: b12599dcff59d014aa88ac8f4a3dc907, type: 3}
     - target: {fileID: 5742211019874911735, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_Sprite
       value: 
