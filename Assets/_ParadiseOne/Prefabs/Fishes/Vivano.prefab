@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088a6b5b4fe2b9641a04a81b7a7d5adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 7105458704583363150}
   _fishLifeTimer: {fileID: 1633744043433150990}
   _rigidbody: {fileID: 100237703918382323}
   _changeDirectionTimer: {fileID: 707603908197535768}

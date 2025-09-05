@@ -8,6 +8,7 @@ public class SeaFishSpawner : MonoBehaviour
     #region Fields
 
     private SeaDataSO _seaDataSO;
+    private SeaEventRandomizer _seaEventRandomizer;
     
     private List<Fish> _fishes = new List<Fish>();
 
@@ -42,14 +43,21 @@ public class SeaFishSpawner : MonoBehaviour
         _spawningZone = new Rect(spawningZonePosition, spawningZoneSize);
     }
 
-    public void InitSeaFishSpawner(SeaDataSO seaDataSo)
+    public void InitSeaFishSpawner(SeaDataSO seaDataSo, SeaEventRandomizer seaEventRandomizer)
     {
         if (seaDataSo == null)
         {
             Debug.LogError("SeaFishSpawner : SeaDataSO is NULL");
             return;
         }
+        if (seaEventRandomizer == null)
+        {
+            Debug.LogError("SeaFishSpawner : SeaEventRandomizer is NULL");
+            return;
+        }
+        
         _seaDataSO = seaDataSo;
+        _seaEventRandomizer = seaEventRandomizer;
 
         _maxNumberOfFish = _seaDataSO.MaxNumberOfFishes;
         _spawningInterval = _seaDataSO.SpawningInterval;
@@ -121,6 +129,19 @@ public class SeaFishSpawner : MonoBehaviour
         
         fish.InitFish(_seaDataSO);
         fish.StartFishLife();
+
+        switch (_seaEventRandomizer.CurrentEvent)
+        {
+            case SeaEventsEnum.BigFish:
+                fish.BeBig(_seaDataSO.FishScaleMultiplier, false);
+                break;
+            case SeaEventsEnum.FastFish:
+                fish.BeFast(_seaDataSO.FishSpeedMultiplier, false);
+                break;
+            case SeaEventsEnum.CloudyWater:
+                fish.BeNotVisible(_seaDataSO.FishLessVisibleOpacity, false);
+                break;
+        }
     }
 
     private void AddFish(Fish fish)
@@ -135,6 +156,54 @@ public class SeaFishSpawner : MonoBehaviour
         fish.FishCollected -= OnFishCollected;
         fish.FishDied -= OnFishDied;
         _fishes.Remove(fish);
+    }
+
+    public void AllFishBig()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            fish.BeBig(_seaDataSO.FishScaleMultiplier);
+        }
+    }
+
+    public void AllFishSmall()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            fish.BeSmall();
+        }
+    }
+
+    public void AllFishFast()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            fish.BeFast(_seaDataSO.FishSpeedMultiplier);
+        }
+    }
+
+    public void AllFishSlow()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            fish.BeSlow();
+        }
+    }
+    
+    public void AllFishVisible()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            fish.BeVisible();
+        }
+    }
+    
+    public void AllFishNotVisible()
+    {
+        foreach (Fish fish in _fishes)
+        {
+            fish.BeNotVisible(_seaDataSO.FishLessVisibleOpacity);
+        }
     }
     #endregion
 

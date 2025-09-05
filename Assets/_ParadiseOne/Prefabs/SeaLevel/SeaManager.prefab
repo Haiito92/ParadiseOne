@@ -33,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 190204017789034234}
+  - {fileID: 5484859058140663405}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &831318430739227416
@@ -48,11 +49,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _seaDataSO: {fileID: 11400000, guid: b7967d6b6a08a70409c1a36344b70ac9, type: 2}
+  _seaAudiosSO: {fileID: 11400000, guid: 67e0b2c9d6c5352479683e8586b73ac1, type: 2}
   _seaFishSpawner: {fileID: 7856071439492658722}
   <SeaScores>k__BackingField: {fileID: 2693528731283533558}
+  <SeaEventRandomizer>k__BackingField: {fileID: 1945867099539182429}
   <SeaTimer>k__BackingField: {fileID: 2598550963571296032}
   _playerOneBoat: {fileID: 0}
   _playerTwoBoat: {fileID: 0}
+  _playerOneBoostController: {fileID: 0}
+  _playerTwoBoostController: {fileID: 0}
 --- !u!114 &2598550963571296032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +82,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2bf2df8643be24191e3a997be1c9c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2836208089918690121
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7933397763958108306}
+    m_Modifications:
+    - target: {fileID: 7728773427493838116, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728773427493838116, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728773427493838116, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728773427493838116, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728773427493838116, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728773427493838116, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728773427493838116, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728773427493838116, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728773427493838116, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728773427493838116, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557308864292600766, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+      propertyPath: m_Name
+      value: SeaEventRandomizer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+--- !u!114 &1945867099539182429 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4349676702638948372, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+  m_PrefabInstance: {fileID: 2836208089918690121}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e5fcea6bf5ded4bb59ad01e461c765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &5484859058140663405 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7728773427493838116, guid: b9106c08de540b5428ab8d0c3d9b4bbc, type: 3}
+  m_PrefabInstance: {fileID: 2836208089918690121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4721693982415079452
 PrefabInstance:
   m_ObjectHideFlags: 0

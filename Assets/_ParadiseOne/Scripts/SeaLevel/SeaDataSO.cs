@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -15,7 +16,20 @@ public class SeaDataSO : ScriptableObject
 
     [field: SerializeField, Tooltip("In seconds")] public float SpawningInterval { get; private set; } = 1.5f;
 
+    [field: Header("EVENT RANDOMIZER")]
+    [field: SerializeField, Tooltip("In seconds")] public float EventLength { get; private set; } = 5;
+
+    [field: SerializeField]
+    public List<SeaEventsEnum> Events { get; private set; } = new List<SeaEventsEnum>();
+    [field: SerializeField] public float FishSpeedMultiplier { get; private set; } = 1.5f;
+    [field: SerializeField] public float FishScaleMultiplier { get; private set; } = 1.35f;
+    [field: SerializeField,Range(0.1f,1.0f)] public float FishLessVisibleOpacity { get; private set; } = 0.35f;
+
+    
     [field: Header("FISHES")]
+    [field: Header("Fish")]
+    [field: SerializeField,Range(0.1f,1.0f)] public float FishBaseOpacity { get; private set; } = 0.7f;
+
     [field: Header("Oursin")]
     [field: SerializeField, Tooltip("In seconds")]
     public float OursinLifeTime { get; private set; } = 5;

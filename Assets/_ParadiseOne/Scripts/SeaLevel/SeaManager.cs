@@ -8,15 +8,19 @@ public class SeaManager : MonoBehaviour
     #region Fields
     [Header("Sea Level Manager Setup")]
     [SerializeField] private SeaDataSO _seaDataSO;
+    [SerializeField] private SeaAudiosSO _seaAudiosSO;
     [SerializeField] private SeaFishSpawner _seaFishSpawner;
     #endregion
 
     #region Properties
     [field:SerializeField] public SeaScores SeaScores { get; private set; }
+    [field:SerializeField] public SeaEventRandomizer SeaEventRandomizer { get; private set; }
     [field:SerializeField] public SeaTimer SeaTimer { get; private set; }
 
     [SerializeField] private BoatControllerAbsolute _playerOneBoat;
     [SerializeField] private BoatControllerAbsolute _playerTwoBoat;
+    [SerializeField] private BoatBoostController _playerOneBoostController;
+    [SerializeField] private BoatBoostController _playerTwoBoostController;
     #endregion
 
     #region Actions
@@ -28,7 +32,12 @@ public class SeaManager : MonoBehaviour
     {
         SeaTimer.InitTimer(_seaDataSO.SeaGameLength);
         
-        _seaFishSpawner.InitSeaFishSpawner(_seaDataSO);
+        SeaEventRandomizer.InitSeaEventRandomizer(_seaDataSO);
+        SeaEventRandomizer.EventStarted += OnSeaEventStarted;
+        SeaEventRandomizer.EventStopped += OnSeaEventStopped;
+        
+        _seaFishSpawner.InitSeaFishSpawner(_seaDataSO, SeaEventRandomizer);
+
     }
 
     private void Start()
@@ -52,10 +61,13 @@ public class SeaManager : MonoBehaviour
         
         if(!_playerTwoBoat) Debug.LogError("Missing Player Two Boat");
         _playerTwoBoat.StartBoat();
+        
+        SeaEventRandomizer.StartSeaEventRandomizer();
     }
 
     private void EndSeaGame()
     {
+        SeaEventRandomizer.StopSeaEventRandomizer();
         _seaFishSpawner.StopSpawner();
         
         _playerOneBoat?.StopBoat();
@@ -81,9 +93,68 @@ public class SeaManager : MonoBehaviour
     }
     #endregion
 
-    //TODO REMOVE THIS SECTION
-    #region Test Functions
-    [Button]
-    public void TestStartSeaGame() => StartSeaGame();
+    #region React To SeaEventRandomizer Events
+
+    private void OnSeaEventStarted(SeaEventsEnum eventType)
+    {
+        switch (eventType)
+        {
+            case SeaEventsEnum.Undefined:
+                //Debug.LogError("Received Undefined Event");
+                break;
+            case SeaEventsEnum.FastFish:
+                _seaFishSpawner.AllFishFast();
+                break;
+            case SeaEventsEnum.BigFish:
+                _seaFishSpawner.AllFishBig();
+                break;
+            case SeaEventsEnum.CloudyWater:
+                _seaFishSpawner.AllFishNotVisible();
+                break;
+            case SeaEventsEnum.InvertedControls:
+                _playerOneBoat.InvertedInputsOn();
+                _playerTwoBoat.InvertedInputsOn();
+                
+                break;
+            case SeaEventsEnum.UnlimitedBoost:
+                _playerOneBoostController.InfiniteBoostOn();
+                _playerTwoBoostController.InfiniteBoostOn();
+                break;
+            default:
+                //Debug.LogError("Received default (undefined) Event");
+                break;
+        }
+    }
+
+    private void OnSeaEventStopped(SeaEventsEnum eventType)
+    {
+        switch (eventType)
+        {
+            case SeaEventsEnum.Undefined:
+                //Debug.LogError("Received Undefined Event");
+                break;
+            case SeaEventsEnum.FastFish:
+                _seaFishSpawner.AllFishSlow();
+                break;
+            case SeaEventsEnum.BigFish:
+                _seaFishSpawner.AllFishSmall();
+                break;
+            case SeaEventsEnum.CloudyWater:
+                _seaFishSpawner.AllFishVisible();
+                break;
+            case SeaEventsEnum.InvertedControls:
+                _playerOneBoat.InvertedInputsOff();
+                _playerTwoBoat.InvertedInputsOff();
+                break;
+            case SeaEventsEnum.UnlimitedBoost:
+                _playerOneBoostController.InfiniteBoostOff();
+                _playerTwoBoostController.InfiniteBoostOff();
+                break;
+            default:
+                //Debug.LogError("Received default (undefined) Event");
+                break;
+        }
+    }
+
     #endregion
 }
