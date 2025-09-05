@@ -8,7 +8,9 @@ public class SeaCanvas : MonoBehaviour
 
     [SerializeField] private SeaScoresUI _seaScoresUI;
     [SerializeField] private SeaTimerUI _seaTimerUI;
-
+    [SerializeField] private SeaEventsUI _seaEventsUI;
+    [SerializeField] private SeaEndGameMenu _seaEndGameMenu;
+    
     [SerializeField] private GameObject _seaGameStatsUIObject;
     [SerializeField] private GameObject _seaStartGameMenuObject;
     [SerializeField] private GameObject _seaEndGameMenuObject;
@@ -20,6 +22,7 @@ public class SeaCanvas : MonoBehaviour
         
         _seaScoresUI.InitSeaScoresUI(_seaManager.SeaScores);
         _seaTimerUI.InitSeaTimerUI(_seaManager.SeaTimer);
+        _seaEventsUI.InitSeaEventsUI(_seaManager.SeaEventRandomizer);
     }
 
     private void OnSeaGameStarted()
@@ -32,8 +35,11 @@ public class SeaCanvas : MonoBehaviour
 
     private void OnSeaGameEnded()
     {
+        _seaEndGameMenu.ResetUI();
         _seaEndGameMenuObject.SetActive(true);
         _seaGameStatsUIObject.SetActive(false);
+        
+        _seaEndGameMenu.ShowScores(_seaManager.SeaScores);
     }
 
     #endregion

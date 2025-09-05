@@ -52,13 +52,27 @@ public abstract class Fish : MonoBehaviour, IFish
         
         
         _fishLifeTimer.StartTimer();
+        
+        Color newColor = _spriteRenderer.color;
+        newColor.a = 0;
+        _spriteRenderer.color = newColor;
+
+        newColor.a = _originalOpacity;
+        _spriteRenderer.DOColor(newColor, 0.2f);
     }
 
     public void KillFish()
     {
         FishDied?.Invoke(this);
         
-        Destroy(this.gameObject);
+        Color newColor = _spriteRenderer.color;
+        newColor.a = 0;
+        
+        _spriteRenderer.DOColor(newColor, 0.2f).OnComplete(() =>
+        {
+            Destroy(this.gameObject);
+
+        });
     }
 
     private void OnFishLifeTimerElapsed()
