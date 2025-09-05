@@ -221,6 +221,7 @@ public class SeaFishSpawner : MonoBehaviour
 
     private void OnFishCollected(PlayerEnum collector, int scoreToAdd)
     {
+        // Debug.Log("FishCollected");
         SpawnedFishCollected?.Invoke(collector, scoreToAdd);
     }
 

@@ -34,11 +34,6 @@ public class Vivano : Fish
     }
 
     #region Fish/IFish Implementation
-    public override void CollectFish(PlayerEnum collector)
-    {
-        //Debug.Log("Collected Vivano");
-        base.CollectFish(collector);
-    }
 
     public override void InitFish(SeaDataSO seaDataSo)
     {

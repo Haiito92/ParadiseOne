@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _ambianceSource;
+
+    [SerializeField] private AudioMixerGroup _sfxAudioMixerGroup;
     
     private void Awake()
     {
@@ -44,7 +47,8 @@ public class AudioManager : MonoBehaviour
         AudioSource source = audioGO.AddComponent<AudioSource>();
         source.clip = clip;
         source.spatialBlend = 1;
-        
+        source.outputAudioMixerGroup = _sfxAudioMixerGroup;
+
         source.Play();
         Destroy(audioGO, clip.length);
     }
@@ -63,6 +67,7 @@ public class AudioManager : MonoBehaviour
         AudioSource source = audioGO.AddComponent<AudioSource>();
         source.clip = clip;
         source.spatialBlend = 0;
+        source.outputAudioMixerGroup = _sfxAudioMixerGroup;
         
         source.Play();
         Destroy(audioGO, clip.length);
