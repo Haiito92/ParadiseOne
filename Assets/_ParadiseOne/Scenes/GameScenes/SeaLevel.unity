@@ -1639,6 +1639,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -8147338716892508146, guid: ddee4278b220328409f3b04b46aa8761, type: 3}
+    - target: {fileID: 458847734765239981, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 562545742303818222, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1647,6 +1651,10 @@ PrefabInstance:
       propertyPath: _boostController
       value: 
       objectReference: {fileID: 1768712260}
+    - target: {fileID: 1445196948112846936, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: _blockedBoostColor.a
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1458515900682452831, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1727,10 +1735,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1685872416683569631, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1717527110402286889, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -7513020690259885010, guid: 29af449ab29242c4f84dea0930211b9d, type: 3}
+    - target: {fileID: 1717527110402286889, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2341044783976086569, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1743,6 +1759,10 @@ PrefabInstance:
       propertyPath: _boostController
       value: 
       objectReference: {fileID: 841426661}
+    - target: {fileID: 3309775660378471837, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: _blockedBoostColor.a
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3618297182190110193, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: _seaManager
       value: 
@@ -1771,6 +1791,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 5321877411749566947, guid: a82b4cd9dac52f9419b0af92a5423225, type: 3}
+    - target: {fileID: 5742211019874911735, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5887597434977328834, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6015284865230507931, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1787,6 +1815,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -7513020690259885010, guid: 29af449ab29242c4f84dea0930211b9d, type: 3}
+    - target: {fileID: 7618149866102431886, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7951111584045526503, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1795,6 +1827,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -5696134520047962842, guid: c887a709e97a4e5468fa75bde568388b, type: 3}
+    - target: {fileID: 9076606852113538568, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

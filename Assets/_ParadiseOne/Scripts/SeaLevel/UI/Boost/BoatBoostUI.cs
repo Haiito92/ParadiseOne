@@ -24,6 +24,10 @@ public class BoatBoostUI : MonoBehaviour
         if (ratio < _boostController.MinGaugeToBoost)
             _boostGauge.color = _blockedBoostColor;
         else
-            _boostGauge.color = Color.white;
+        {
+            Color colorWhite = new Color(1f,1,1,0.8f);
+            _boostGauge.color = colorWhite;
+        }
+        
     }
 }
