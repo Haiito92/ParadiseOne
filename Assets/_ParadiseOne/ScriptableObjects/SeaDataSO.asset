@@ -12,27 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa10337172d91114c862ab684be6530f, type: 3}
   m_Name: SeaDataSO
   m_EditorClassIdentifier: 
-  <SeaGameLength>k__BackingField: 30
+  <SeaGameLength>k__BackingField: 80
   <MaxNumberOfFishes>k__BackingField: 10
-  <SpawningInterval>k__BackingField: 1.5
-  <EventLength>k__BackingField: 5
+  <SpawningInterval>k__BackingField: 0.5
+  <EventLength>k__BackingField: 15
   <Events>k__BackingField: 0100000002000000030000000400000005000000
   <FishSpeedMultiplier>k__BackingField: 1.5
-  <FishScaleMultiplier>k__BackingField: 1.35
+  <FishScaleMultiplier>k__BackingField: 1.5
   <FishLessVisibleOpacity>k__BackingField: 0.35
   <FishBaseOpacity>k__BackingField: 0.7
-  <OursinLifeTime>k__BackingField: 5
-  <OursinScore>k__BackingField: 10
-  <VivanoLifeTime>k__BackingField: 5
-  <VivanoScore>k__BackingField: 10
-  <VivanoSpeed>k__BackingField: 50
-  <VivanoChangeDirectionInterval>k__BackingField: 1
+  <OursinLifeTime>k__BackingField: 20
+  <OursinScore>k__BackingField: 2
+  <VivanoLifeTime>k__BackingField: 20
+  <VivanoScore>k__BackingField: 4
+  <VivanoSpeed>k__BackingField: 10
+  <VivanoChangeDirectionInterval>k__BackingField: 2
   <BoatMaxSpeed>k__BackingField: 3
   <BoatAcceleration>k__BackingField: 8
   <BoatTurnSpeed>k__BackingField: 120
   <BoostBoatMaxSpeed>k__BackingField: 6
   <BoostBoatAcceleration>k__BackingField: 16
   <BoostBoatTurnSpeed>k__BackingField: 240
-  <MaxDurationBoost>k__BackingField: 2
+  <MaxDurationBoost>k__BackingField: 3
   <RechargeRate>k__BackingField: 0.2
-  <MinQuantityToBoost>k__BackingField: 0.5
+  <MinQuantityToBoost>k__BackingField: 0.1
