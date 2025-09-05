@@ -10,11 +10,11 @@ public class SeaManager : MonoBehaviour
     [SerializeField] private SeaDataSO _seaDataSO;
     [SerializeField] private SeaAudiosSO _seaAudiosSO;
     [SerializeField] private SeaFishSpawner _seaFishSpawner;
-    [SerializeField] private SeaEventRandomizer _seaEventRandomizer;
     #endregion
 
     #region Properties
     [field:SerializeField] public SeaScores SeaScores { get; private set; }
+    [field:SerializeField] public SeaEventRandomizer SeaEventRandomizer { get; private set; }
     [field:SerializeField] public SeaTimer SeaTimer { get; private set; }
 
     [SerializeField] private BoatControllerAbsolute _playerOneBoat;
@@ -32,11 +32,11 @@ public class SeaManager : MonoBehaviour
     {
         SeaTimer.InitTimer(_seaDataSO.SeaGameLength);
         
-        _seaEventRandomizer.InitSeaEventRandomizer(_seaDataSO);
-        _seaEventRandomizer.EventStarted += OnSeaEventStarted;
-        _seaEventRandomizer.EventStopped += OnSeaEventStopped;
+        SeaEventRandomizer.InitSeaEventRandomizer(_seaDataSO);
+        SeaEventRandomizer.EventStarted += OnSeaEventStarted;
+        SeaEventRandomizer.EventStopped += OnSeaEventStopped;
         
-        _seaFishSpawner.InitSeaFishSpawner(_seaDataSO, _seaEventRandomizer);
+        _seaFishSpawner.InitSeaFishSpawner(_seaDataSO, SeaEventRandomizer);
 
     }
 
@@ -62,12 +62,12 @@ public class SeaManager : MonoBehaviour
         if(!_playerTwoBoat) Debug.LogError("Missing Player Two Boat");
         _playerTwoBoat.StartBoat();
         
-        _seaEventRandomizer.StartSeaEventRandomizer();
+        SeaEventRandomizer.StartSeaEventRandomizer();
     }
 
     private void EndSeaGame()
     {
-        _seaEventRandomizer.StopSeaEventRandomizer();
+        SeaEventRandomizer.StopSeaEventRandomizer();
         _seaFishSpawner.StopSpawner();
         
         _playerOneBoat?.StopBoat();
