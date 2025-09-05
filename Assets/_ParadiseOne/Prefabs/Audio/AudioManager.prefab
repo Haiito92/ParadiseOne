@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicSource: {fileID: 4320615376892469887}
   _ambianceSource: {fileID: 8094151787173851754}
+  _sfxAudioMixerGroup: {fileID: 319911406993725586, guid: 4fadf1f5b604a3f49bac3eb7e6dae0a1, type: 2}
 --- !u!82 &4320615376892469887
 AudioSource:
   m_ObjectHideFlags: 0
