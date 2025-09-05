@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8e2270bd3ac1b7644ad73c3961bbc238
+guid: 1aba1041f1c1b6848a5342d30c13ca97
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5829418998882520684
-    second: UI_Bigger_fish_asset_0
+      213: -3297791466991685387
+    second: Ecume Rocher 03_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Bigger_fish_asset_0
+      name: Ecume Rocher 03_0
       rect:
         serializedVersion: 2
-        x: 167
-        y: 19
-        width: 164
-        height: 463
+        x: 96
+        y: 148
+        width: 527
+        height: 136
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c6e4e43a1b146e050800000000000000
-      internalID: 5829418998882520684
+      spriteID: 5f075aa1224eb32d0800000000000000
+      internalID: -3297791466991685387
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Bigger_fish_asset_0: 5829418998882520684
+      Ecume Rocher 03_0: -3297791466991685387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
