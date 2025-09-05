@@ -602,7 +602,7 @@ PlayerSettings:
     QNX: DOTWEEN
     Standalone: DOTWEEN;AMPLIFY_SHADER_EDITOR
     VisionOS: DOTWEEN
-    WebGL: DOTWEEN
+    WebGL: DOTWEEN;AMPLIFY_SHADER_EDITOR
     Windows Store Apps: DOTWEEN
     XboxOne: DOTWEEN
     iPhone: DOTWEEN

@@ -17,7 +17,7 @@ MonoBehaviour:
   <SpawningInterval>k__BackingField: 0.5
   <EventLength>k__BackingField: 15
   <Events>k__BackingField: 0100000002000000030000000400000005000000
-  <FishSpeedMultiplier>k__BackingField: 1.5
+  <FishSpeedMultiplier>k__BackingField: 2
   <FishScaleMultiplier>k__BackingField: 1.5
   <FishLessVisibleOpacity>k__BackingField: 0.35
   <FishBaseOpacity>k__BackingField: 0.7
@@ -25,7 +25,7 @@ MonoBehaviour:
   <OursinScore>k__BackingField: 2
   <VivanoLifeTime>k__BackingField: 20
   <VivanoScore>k__BackingField: 4
-  <VivanoSpeed>k__BackingField: 10
+  <VivanoSpeed>k__BackingField: 30
   <VivanoChangeDirectionInterval>k__BackingField: 2
   <BoatMaxSpeed>k__BackingField: 3
   <BoatAcceleration>k__BackingField: 8
