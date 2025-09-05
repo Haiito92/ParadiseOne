@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
@@ -12,14 +14,21 @@ public class SeaEventRandomizer : MonoBehaviour
 
     private List<SeaEventsEnum> _allEvents = new List<SeaEventsEnum>();
     public SeaEventsEnum CurrentEvent { get; private set; }
+
     #endregion
 
-    #region Actions
+    #region Actions/Unity Events
 
     public event Action<SeaEventsEnum> EventStarted;
     public event Action<SeaEventsEnum> EventStopped;
 
-    #endregion    
+    [SerializeField] private UnityEvent<SeaEventsEnum> EventStartedUE;
+    #endregion
+
+    private void Awake()
+    {
+        EventStartedUE.AddListener((eventType)=> EventStarted?.Invoke(eventType));
+    }
 
     public void InitSeaEventRandomizer(SeaDataSO seaDataSo)
     {
@@ -51,8 +60,8 @@ public class SeaEventRandomizer : MonoBehaviour
 
         CurrentEvent = _allEvents[randomIndex];
 
-        EventStarted?.Invoke(CurrentEvent);
-        
+        EventStartedUE?.Invoke(CurrentEvent);
+
         Debug.LogWarning($"New event is : {CurrentEvent}");
     }
     #endregion

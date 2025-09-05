@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 2398404834000949507}
   - component: {fileID: 707959538971248270}
   - component: {fileID: 4924608903996753140}
+  - component: {fileID: 3546594854666060173}
   - component: {fileID: 1074966503169626998}
   - component: {fileID: 4210388925778685966}
   - component: {fileID: 1953502964355415065}
@@ -275,6 +276,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 3546594854666060173}
+        m_TargetAssemblyTypeName: AudioComponent, Assembly-CSharp
+        m_MethodName: PlaySound2D
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 884d16dc47f1c8c438a0e15b78e39794, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1074966503169626998}
         m_TargetAssemblyTypeName: SceneLoadingComponent, Assembly-CSharp
         m_MethodName: LoadScene
@@ -287,6 +300,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3546594854666060173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8001655174350415417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b87cae797c7754d9c6080901a3c0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1074966503169626998
 MonoBehaviour:
   m_ObjectHideFlags: 0

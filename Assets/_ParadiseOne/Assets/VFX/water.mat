@@ -30,7 +30,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _water_02:
-        m_Texture: {fileID: 2800000, guid: e6d6348160a56ff43a5ef3d9cf6b4f7f, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -51,7 +51,7 @@ Material:
     - _DX_pan: 0.1
     - _DY_pan: 0
     - _D_Max: 1.75
-    - _D_Min: 0.5
+    - _D_Min: 0.3
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0
