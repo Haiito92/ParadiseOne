@@ -89,6 +89,7 @@ public class SeaManager : MonoBehaviour
 
     private void OnSeaFishCollected(PlayerEnum collector, int scoreToAdd)
     {
+        Debug.Log($"AddScore to {collector}");
         SeaScores.AddScore(collector, scoreToAdd);
     }
     #endregion
