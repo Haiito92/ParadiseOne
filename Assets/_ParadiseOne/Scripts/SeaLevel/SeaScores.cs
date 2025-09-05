@@ -33,7 +33,7 @@ public class SeaScores : MonoBehaviour
                 return;
             case PlayerEnum.PlayerTwo:
                 _playerTwoScore += scoreToAdd;
-                ScoreUpdated?.Invoke(player, _playerOneScore);
+                ScoreUpdated?.Invoke(player, _playerTwoScore);
                 return;
             default:
                 return;

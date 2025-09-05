@@ -138,7 +138,7 @@ MonoBehaviour:
   _boostTurnSpeed: 240
   _maxDurationBoost: 2
   _rechargeRate: 0.2
-  _minGaugeToBoost: 0.5
+  _minGaugeToBoost: 0.1
 --- !u!114 &4184059779790598403
 MonoBehaviour:
   m_ObjectHideFlags: 0

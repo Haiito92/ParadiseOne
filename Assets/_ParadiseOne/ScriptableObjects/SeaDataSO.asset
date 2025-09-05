@@ -25,7 +25,7 @@ MonoBehaviour:
   <OursinScore>k__BackingField: 2
   <VivanoLifeTime>k__BackingField: 20
   <VivanoScore>k__BackingField: 4
-  <VivanoSpeed>k__BackingField: 30
+  <VivanoSpeed>k__BackingField: 35
   <VivanoChangeDirectionInterval>k__BackingField: 2
   <BoatMaxSpeed>k__BackingField: 3
   <BoatAcceleration>k__BackingField: 8
