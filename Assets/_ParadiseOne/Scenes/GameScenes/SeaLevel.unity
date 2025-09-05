@@ -1180,6 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vignetteVolume: {fileID: 1732368606}
+  _animationLength: 1
 --- !u!1 &1738318695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,6 +1877,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2341044783976086569, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3271259951953345657, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1888,9 +1893,9 @@ PrefabInstance:
       propertyPath: _seaManager
       value: 
       objectReference: {fileID: 3642295889181157953}
-    - target: {fileID: 4193353442842030039, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
+    - target: {fileID: 6015284865230507931, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6938333992072695774, guid: d9aa1a614984cbe42b57a9ac343c1364, type: 3}
       propertyPath: m_Name
