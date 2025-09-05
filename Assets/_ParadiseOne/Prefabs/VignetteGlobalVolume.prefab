@@ -63,4 +63,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vignetteVolume: {fileID: 4784834101290135040}
-  _animationLength: 0.7
+  _animationLength: 0.5
