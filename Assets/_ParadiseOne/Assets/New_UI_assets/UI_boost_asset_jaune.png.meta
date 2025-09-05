@@ -103,10 +103,10 @@ TextureImporter:
       name: UI_boost_asset_jaune_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 192
-        width: 460
-        height: 105
+        x: 193
+        y: 22
+        width: 103
+        height: 458
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
