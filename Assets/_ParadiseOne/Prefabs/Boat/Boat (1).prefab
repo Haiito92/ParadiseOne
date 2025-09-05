@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 976073358118995831}
   - component: {fileID: 4184059779790598403}
   - component: {fileID: 1964684383633300436}
+  - component: {fileID: 4794951938026489215}
   m_Layer: 0
   m_Name: Boat (1)
   m_TagString: Untagged
@@ -168,7 +169,23 @@ MonoBehaviour:
   spriteTransform: {fileID: 6504834077587541210}
   stretchAmount: 0.3
   stretchDuration: 0.5
-  bounceCount: 0
+  bounceCount: 5
+--- !u!114 &4794951938026489215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739101670081082598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fca11de9ceae04083da3805ce5b493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particlePrefab: {fileID: 4026989132189326053, guid: ab8d55fae5702a64a8308cb9592e80b3, type: 3}
+  _spawnInterval: 0.1
+  _spawnDistance: 0.1
+  _particleLifetime: 1.5
 --- !u!1 &4702944397914306394
 GameObject:
   m_ObjectHideFlags: 0
